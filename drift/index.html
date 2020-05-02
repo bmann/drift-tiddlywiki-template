@@ -231,25 +231,11 @@ Error message and password prompt
 
 <li>$:/.tb/ui/AdvancedSearch/Field</li>
 
-<li>$:/ak/config/TiddlerReference/Default</li>
+<li>$:/ak/plugins/TWCrossLinks</li>
 
-<li>$:/ak/ui/Keywords.css</li>
+<li>$:/ak/plugins/TWCrossLinks/config/default</li>
 
-<li>$:/ak/ui/KeywordsTemplate</li>
-
-<li>$:/ak/ui/TiddlerReference</li>
-
-<li>$:/ak/ui/TiddlerReference/Backlinks</li>
-
-<li>$:/ak/ui/TiddlerReference/footer</li>
-
-<li>$:/ak/ui/TiddlerReference/footer.kwd</li>
-
-<li>$:/ak/ui/TiddlerReference/Freelinks</li>
-
-<li>$:/ak/ui/TiddlerReference/Keywords</li>
-
-<li>$:/ak/ui/TiddlerReference/Tagging</li>
+<li>$:/ak/plugins/TWCrossLinks/ui/tabs</li>
 
 <li>$:/ak/ui/transclude.css</li>
 
@@ -307,6 +293,8 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/Import</li>
+
 <li>$:/isEncrypted</li>
 
 <li>$:/jd/palette/C8Dark</li>
@@ -333,7 +321,25 @@ Error message and password prompt
 
 <li>$:/SplashScreen</li>
 
+<li>$:/state/DriftHomeTabs-651803151</li>
+
+<li>$:/state/searchtab-1444756290</li>
+
+<li>$:/state/showeditpreview</li>
+
 <li>$:/state/sidebar</li>
+
+<li>$:/state/tab--1963855381</li>
+
+<li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab-738187504</li>
+
+<li>$:/state/tab-97055648</li>
+
+<li>$:/state/tab/moresidebar-1850697562</li>
+
+<li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/status/IsAnonymous</li>
 
@@ -347,6 +353,8 @@ Error message and password prompt
 
 <li>$:/StoryList</li>
 
+<li>$:/tags/SideBarSegment</li>
+
 <li>$:/Temp/newlink</li>
 
 <li>$:/theme</li>
@@ -356,6 +364,8 @@ Error message and password prompt
 <li>$:/themes/jd/Mono/Database</li>
 
 <li>$:/themes/jd/Mono/Palette/SpartanNight</li>
+
+<li>$:/themes/jd/Mono/Stylesheet</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -379,6 +389,8 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>Changelog</li>
+
 <li>Credits &amp; Dependencies</li>
 
 <li>Drift</li>
@@ -397,6 +409,8 @@ Error message and password prompt
 
 <li>Example: Freelink Source</li>
 
+<li>Example: No Inbound links</li>
+
 <li>Example: Tags Source</li>
 
 <li>Example: Tiddler with external reference</li>
@@ -412,6 +426,8 @@ Error message and password prompt
 <li>Freelinks</li>
 
 <li>keyword1</li>
+
+<li>Plugin - TWCrosslinks</li>
 
 <li>Tag1</li>
 
@@ -509,127 +525,128 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
 &lt;/$reveal&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20200429195808011" modified="20200429195921317" tags="" title="$:/ak/config/TiddlerReference/Default" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>$:/ak/ui/TiddlerReference/Backlinks</pre>
+<div created="20200502092707287" description="Discover all your intra tiddlers links" modified="20200502093419195" name="TWCrossLinks" plugin-type="plugin" tags="" title="$:/ak/plugins/TWCrossLinks" type="application/json" version="0.0.3" revision="0" bag="default">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/ak/plugins/TWCrossLinks/config/default&quot;: {
+            &quot;text&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/backlinks&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/config/default&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;modified&quot;: &quot;20200502082431500&quot;,
+            &quot;created&quot;: &quot;20200429195808011&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/core/backlinks&quot;: {
+            &quot;created&quot;: &quot;20200429182330136&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/TiddlerInfo/\n&lt;$list filter=\&quot;[!is[system]all[current]backlinks[]!tag[hide]sort[title]] -[is[current]]\&quot; emptyMessage=&lt;&lt;lingo References/Empty&gt;&gt; template=\&quot;$:/core/ui/ListItemTemplate\&quot;&gt;\n&lt;/$list&gt;&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/backlinks&quot;,
+            &quot;tags&quot;: &quot;$:/tags/TWCrossLinks&quot;,
+            &quot;modified&quot;: &quot;20200502090416389&quot;,
+            &quot;caption&quot;: &quot;Backlinks&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/core/freelinks&quot;: {
+            &quot;created&quot;: &quot;20200430051330741&quot;,
+            &quot;text&quot;: &quot;\\define searchInField(field, for, ci)\n&lt;$list filter=\&quot;[!is[shadow]!is[system]regexp:$field$[$for$$ci$]] -[all[current]backlinks[]]\&quot; emptyMessage=\&quot;No freelinks to this tiddler\&quot; \n template=\&quot;$:/core/ui/ListItemTemplate\&quot;&gt;\n&lt;$link&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;\n&lt;/$list&gt;\n\\end\n\n&lt;$macrocall $name=\&quot;searchInField\&quot; field=\&quot;text\&quot; for={{!!title}} ci=\&quot;(?i)\&quot;/&gt;\n&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/freelinks&quot;,
+            &quot;tags&quot;: &quot;$:/tags/TWCrossLinks&quot;,
+            &quot;modified&quot;: &quot;20200502090439897&quot;,
+            &quot;caption&quot;: &quot;Freelinks&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/core/keywords&quot;: {
+            &quot;created&quot;: &quot;20200429195123372&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/TiddlerInfo/\n&lt;$list filter=\&quot;[search:keywords&lt;currentTiddler&gt;sort[title]]\&quot; emptyMessage=\&quot;There are no tiddler having this one as keyword\&quot; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/keywords&quot;,
+            &quot;tags&quot;: &quot;$:/tags/TWCrossLinks&quot;,
+            &quot;modified&quot;: &quot;20200502090501525&quot;,
+            &quot;caption&quot;: &quot;Keywords&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/core/tagging&quot;: {
+            &quot;created&quot;: &quot;20200429183952157&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/TiddlerInfo/\n&lt;$list filter=\&quot;[all[current]tagging[]]\&quot; emptyMessage=&lt;&lt;lingo Tagging/Empty&gt;&gt; template=\&quot;$:/core/ui/ListItemTemplate\&quot;/&gt;\n&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/tagging&quot;,
+            &quot;tags&quot;: &quot;$:/tags/TWCrossLinks&quot;,
+            &quot;modified&quot;: &quot;20200502090517091&quot;,
+            &quot;caption&quot;: &quot;Tagged&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/ui/footer&quot;: {
+            &quot;created&quot;: &quot;20200430143629582&quot;,
+            &quot;text&quot;: &quot;\\define regexpattern()\n$(currentTiddler)$(?i)\n\\end\n&lt;!--Show references Backlinks/Keywords/Tags/Freelinks--&gt;\n&lt;$set name=\&quot;text-pattern\&quot; value=&lt;&lt;regexpattern&gt;&gt;&gt;\n&lt;$list filter=\&quot;[all[current]tagging[]]  [search:keywords&lt;currentTiddler&gt;]  [!is[system]regexp:text&lt;text-pattern&gt;] [!is[system]all[current]backlinks[]!tag[hide]] -[is[current]] +[limit[1]]\&quot; variable=none&gt;\n    &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot; tag=\&quot;div\&quot; retain=\&quot;yes\&quot; animate=\&quot;yes\&quot;&gt;\n        ,,&lt;hr /&gt;,,\n    &lt;span class=\&quot;hideprint\&quot;&gt;\n         &lt;span style=\&quot;font-size:0.85em\&quot;&gt;\n        //Inbound Links:// &lt;/span&gt;\n        &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot;&gt;\n            &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;show\&quot;&gt;{{$:/core/images/unfold-button}}&lt;/$button&gt;    &lt;hr /&gt;\n        &lt;/$reveal&gt;\n            &lt;$reveal type=\&quot;match\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot;&gt;\n                &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;hide\&quot;&gt;{{$:/core/images/fold-button}}&lt;/$button&gt;   &lt;hr /&gt;\n&lt;!--                &lt;span class=\&quot;indent1\&quot;&gt; --&gt;\n                    &lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TWCrossLinksSegment]!has[draft.of]] [[$:/ak/plugins/TWCrossLinks/ui/tabs]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;block\&quot;/&gt; &lt;/$list&gt;\n&lt;!--                &lt;/span&gt; --&gt;\n            &lt;/$reveal&gt;\n        &lt;/span&gt;\n    &lt;/$reveal&gt;\n&lt;/$list&gt;\n&lt;/$set&gt;&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/footer&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
+            &quot;modified&quot;: &quot;20200502093210182&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/ui/footer.kwd&quot;: {
+            &quot;created&quot;: &quot;20200428214251454&quot;,
+            &quot;text&quot;: &quot;&lt;!--If  has keywords--&gt;\n&lt;$list filter=\&quot;[all[current]has[keywords]]\&quot;&gt;\n,,//See also//:\n&lt;$list filter=\&quot;[enlist{!!keywords}]\&quot; template=\&quot;$:/ak/plugins/TWCrossLinks/ui/footer.kwd.template\&quot;&gt;&lt;/$list&gt;,,\n&lt;/$list&gt;\n&lt;!--If reference field is not empty--&gt;\n&lt;$list filter=\&quot;[is[current]!field:reference[]]\&quot;&gt;\n &lt;br /&gt;\n,,External ref: &lt;a href={{!!url}} target=\&quot;_blank\&quot; class=\&quot;tc-tiddlylink-external\&quot;&gt;&lt;$view field=\&quot;reference\&quot;}}/&gt;&lt;/a&gt;&lt;br&gt;,,\n&lt;/$list&gt;\n\n\n\n&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/footer.kwd&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
+            &quot;modified&quot;: &quot;20200502090828057&quot;,
+            &quot;list-before&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/footer&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/ui/footer.kwd.css&quot;: {
+            &quot;created&quot;: &quot;20200428212006657&quot;,
+            &quot;text&quot;: &quot;.sl-header{\n  color: #383d41;\n  background-color: #e2e3e5;\n  border-color: #d6d8db;\n  padding: 0.75rem 1.25rem;\n  margin-bottom: 1rem;\n  border-radius: 0.25rem;\n}\n\n.sl-keywords {\n   display: inline-block;\n    padding: 0.16em 0.7em;\n    font-size: 0.9em;\n    font-weight: 400;\n    line-height: 1.2em;\n    color: #333333;\n    white-space: nowrap;\n    vertical-align: baseline;\n    border-radius: 1em;\n    background-color:#ffe7b3;\n}\n.sl-keywords {\n  outline:none;\n} /*remove the blue border on button focus */&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/footer.kwd.css&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;modified&quot;: &quot;20200502090911093&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/ui/footer.kwd.template&quot;: {
+            &quot;created&quot;: &quot;20200428204919232&quot;,
+            &quot;text&quot;: &quot;\\define keywords-body(kwd)\n&lt;$list filter=\&quot;[tag[$kwd$]] [search:keywords[$kwd$]]\&quot; variable=\&quot;itemTid\&quot;&gt;\n&lt;$link to=&lt;&lt;itemTid&gt;&gt; &gt;&lt;$text text=&lt;&lt;itemTid&gt;&gt;/&gt;&lt;/$link&gt;\n&lt;/$list&gt;\n\\end\n&lt;!-- keywords-body lists all tiddler tagged with kwd or have kwd in their keywords field --&gt;\n\n\n&lt;$set name=\&quot;transclusion\&quot; value=&lt;&lt;qualify \&quot;$:/state/popup/tag\&quot;&gt;&gt; &gt;\n&lt;$button class=\&quot;tc-btn-invisible sl-keywords\&quot; popup=&lt;&lt;transclusion&gt;&gt; &gt;\n&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;/$button&gt;\n&lt;$reveal state=&lt;&lt;transclusion&gt;&gt; type=\&quot;popup\&quot; position=\&quot;below\&quot; animate=\&quot;yes\&quot; class=\&quot;tc-drop-down\&quot;&gt;\n&lt;$link to=&lt;&lt;currentTiddler&gt;&gt; &gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;&lt;/$link&gt;\n&lt;hr&gt;\n&lt;$macrocall $name=\&quot;keywords-body\&quot; kwd=&lt;&lt;currentTiddler&gt;&gt; /&gt;\n&lt;/$reveal&gt;\n&lt;/$set&gt;\n\n&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/footer.kwd.template&quot;,
+            &quot;modified&quot;: &quot;20200502091004582&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/ui/tabs&quot;: {
+            &quot;created&quot;: &quot;20200429182054776&quot;,
+            &quot;text&quot;: &quot;&lt;$macrocall $name=\&quot;tabs\&quot; tabsList=\&quot;[all[shadows+tiddlers]tag[$:/tags/TWCrossLinks]!has[draft.of]]\&quot; default=\&quot;{{$:/ak/plugins/TWCrossLinks/config/default}}\&quot;/&gt;&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;0&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/tabs&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;modified&quot;: &quot;20200502092625774&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/change.log&quot;: {
+            &quot;created&quot;: &quot;20200502091404523&quot;,
+            &quot;text&quot;: &quot;''2020-05-02''\n\n* Initial packaging and release&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/change.log&quot;,
+            &quot;modified&quot;: &quot;20200502091509266&quot;
+        }
+    }
+}</pre>
 </div>
-<div created="20200428212006657" modified="20200501234339999" tags="$:/tags/Stylesheet" title="$:/ak/ui/Keywords.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>.sl-header{
-  color: #383d41;
-  background-color: #e2e3e5;
-  border-color: #d6d8db;
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
-  border-radius: 0.25rem;
-}
-
-.sl-keywords {
-   display: inline-block;
-    padding: 0.16em 0.7em;
-    font-size: 0.9em;
-    font-weight: 400;
-    line-height: 1.2em;
-    color: #333333;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 1em;
-    background-color:#ffe7b3;
-}
-.sl-keywords {
-  outline:none;
-} /*remove the blue border on button focus */</pre>
+<div created="20200429195808011" modified="20200502094715896" tags="" title="$:/ak/plugins/TWCrossLinks/config/default" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>$:/ak/plugins/TWCrossLinks/core/backlinks</pre>
 </div>
-<div created="20200428204919232" modified="20200501234441509" title="$:/ak/ui/KeywordsTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>\define keywords-body(kwd)
-&lt;$list filter=&quot;[tag[$kwd$]] [search:keywords[$kwd$]]&quot; variable=&quot;itemTid&quot;&gt;
-&lt;$link to=&lt;&lt;itemTid&gt;&gt; &gt;&lt;$text text=&lt;&lt;itemTid&gt;&gt;/&gt;&lt;/$link&gt;
-&lt;/$list&gt;
-\end
-&lt;!-- keywords-body lists all tiddler tagged with kwd or have kwd in their keywords field --&gt;
-
-
-&lt;$set name=&quot;transclusion&quot; value=&lt;&lt;qualify &quot;$:/state/popup/tag&quot;&gt;&gt; &gt;
-&lt;$button class=&quot;tc-btn-invisible sl-keywords&quot; popup=&lt;&lt;transclusion&gt;&gt; &gt;
-&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;
-&lt;/$button&gt;
-&lt;$reveal state=&lt;&lt;transclusion&gt;&gt; type=&quot;popup&quot; position=&quot;below&quot; animate=&quot;yes&quot; class=&quot;tc-drop-down&quot;&gt;
-&lt;$link to=&lt;&lt;currentTiddler&gt;&gt; &gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;&lt;/$link&gt;
-&lt;hr&gt;
-&lt;$macrocall $name=&quot;keywords-body&quot; kwd=&lt;&lt;currentTiddler&gt;&gt; /&gt;
-&lt;/$reveal&gt;
-&lt;/$set&gt;
-
-</pre>
-</div>
-<div created="20200429182054776" modified="20200429204348155" tags="" title="$:/ak/ui/TiddlerReference" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/tags/TiddlerRef]!has[draft.of]]&quot; default={{$:/ak/config/TiddlerReference/Default}}/&gt;</pre>
-</div>
-<div caption="Backlinks" created="20200429182330136" modified="20200430142404639" tags="$:/tags/TiddlerRef" title="$:/ak/ui/TiddlerReference/Backlinks" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>\define lingo-base() $:/language/TiddlerInfo/
-&lt;$list filter=&quot;[!is[system]all[current]backlinks[]!tag[hide]sort[title]] -[is[current]]&quot; emptyMessage=&lt;&lt;lingo References/Empty&gt;&gt; template=&quot;$:/core/ui/ListItemTemplate&quot;&gt;
-&lt;/$list&gt;</pre>
-</div>
-<div created="20200430143629582" modified="20200501234645436" tags="$:/tags/ViewTemplate" title="$:/ak/ui/TiddlerReference/footer" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>\define regexpattern()
-$(currentTiddler)$(?i)
-\end
-&lt;!--Show references Backlinks/Keywords/Tags/Freelinks--&gt;
-&lt;$set name=&quot;text-pattern&quot; value=&lt;&lt;regexpattern&gt;&gt;&gt;
-&lt;$list filter=&quot;[all[current]tagging[]]  [search:keywords&lt;currentTiddler&gt;]  [!is[system]regexp:text&lt;text-pattern&gt;] [!is[system]all[current]backlinks[]!tag[hide]] -[is[current]] +[limit[1]]&quot; variable=none&gt;
-    &lt;$reveal type=&quot;nomatch&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; tag=&quot;div&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
-        ,,&lt;hr /&gt;,,
-    &lt;span class=&quot;hideprint&quot;&gt;
-         &lt;span style=&quot;font-size:0.85em&quot;&gt;
-        //Inbound Links:// &lt;/span&gt;
-        &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/TiddlerRefFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
-            &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/TiddlerRefFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;{{$:/core/images/unfold-button}}&lt;/$button&gt;    &lt;hr /&gt;
-        &lt;/$reveal&gt;
-            &lt;$reveal type=&quot;match&quot; stateTitle=&quot;$:/temp/TiddlerRefFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
-                &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/TiddlerRefFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;{{$:/core/images/fold-button}}&lt;/$button&gt;   &lt;hr /&gt;
-&lt;!--                &lt;span class=&quot;indent1&quot;&gt; --&gt;
-                    &lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/TiddlerReferenceSegment]!has[draft.of]] [[$:/ak/ui/TiddlerReference]]&quot; variable=&quot;listItem&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=&quot;block&quot;/&gt; &lt;/$list&gt;
-&lt;!--                &lt;/span&gt; --&gt;
-            &lt;/$reveal&gt;
-        &lt;/span&gt;
-    &lt;/$reveal&gt;
-&lt;/$list&gt;
-&lt;/$set&gt;</pre>
-</div>
-<div created="20200428214251454" list-before="$:/ak/ui/TiddlerReference/footer" modified="20200501234726167" tags="$:/tags/ViewTemplate" title="$:/ak/ui/TiddlerReference/footer.kwd" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&lt;!--If  has keywords--&gt;
-&lt;$list filter=&quot;[all[current]has[keywords]]&quot;&gt;
-,,//See also//:
-&lt;$list filter=&quot;[enlist{!!keywords}]&quot; template=&quot;$:/ak/ui/KeywordsTemplate&quot;&gt;&lt;/$list&gt;,,
-&lt;/$list&gt;
-&lt;!--If reference field is not empty--&gt;
-&lt;$list filter=&quot;[is[current]!field:reference[]]&quot;&gt;
- &lt;br /&gt;
-,,External ref: &lt;a href={{!!url}} target=&quot;_blank&quot; class=&quot;tc-tiddlylink-external&quot;&gt;&lt;$view field=&quot;reference&quot;}}/&gt;&lt;/a&gt;&lt;br&gt;,,
-&lt;/$list&gt;
-
-
-
-</pre>
-</div>
-<div caption="Freelinks" created="20200430051330741" modified="20200430151337773" tags="$:/tags/TiddlerRef" title="$:/ak/ui/TiddlerReference/Freelinks" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>\define searchInField(field, for, ci)
-&lt;$list filter=&quot;[!is[shadow]!is[system]regexp:$field$[$for$$ci$]] -[all[current]backlinks[]]&quot; emptyMessage=&quot;No freelinks to this tiddler&quot; 
- template=&quot;$:/core/ui/ListItemTemplate&quot;&gt;
-&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
-&lt;/$list&gt;
-\end
-
-&lt;$macrocall $name=&quot;searchInField&quot; field=&quot;text&quot; for={{!!title}} ci=&quot;(?i)&quot;/&gt;
-</pre>
-</div>
-<div caption="Keywords" created="20200429195123372" modified="20200430210130551" tags="$:/tags/TiddlerRef" title="$:/ak/ui/TiddlerReference/Keywords" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>\define lingo-base() $:/language/TiddlerInfo/
-&lt;$list filter=&quot;[search:keywords&lt;currentTiddler&gt;sort[title]]&quot; emptyMessage=&quot;There are no tiddler having this one as keyword&quot; template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
-</pre>
-</div>
-<div caption="Tagged" created="20200429183952157" modified="20200430210014562" tags="$:/tags/TiddlerRef" title="$:/ak/ui/TiddlerReference/Tagging" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>\define lingo-base() $:/language/TiddlerInfo/
-&lt;$list filter=&quot;[all[current]tagging[]]&quot; emptyMessage=&lt;&lt;lingo Tagging/Empty&gt;&gt; template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
-</pre>
+<div created="20200429182054776" modified="20200502094801424" tags="" title="$:/ak/plugins/TWCrossLinks/ui/tabs" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/tags/TWCrossLinks]!has[draft.of]]&quot; default={{$:/ak/plugins/TWCrossLinks/config/default}}/&gt;</pre>
 </div>
 <div created="20200427215400270" modified="20200501234433638" tags="$:/tags/Stylesheet" title="$:/ak/ui/transclude.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>.tc-sidebar-lists button.tc-btn-mini { 
@@ -734,19 +751,19 @@ $(currentTiddler)$(?i)
 <div created="20200428155156560" modified="20200428155156608" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>yes</pre>
 </div>
-<div created="20190201102601467" creator="jd" modified="20200429204047680" modifier="jd" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/page-controls" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190201102601467" creator="jd" modified="20200502111832792" modifier="jd" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/page-controls" type="text/vnd.tiddlywiki" revision="2" bag="default">
 <pre>hide</pre>
 </div>
-<div created="20190201102714829" creator="jd" modified="20200429204050809" modifier="jd" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/search" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190201102714829" creator="jd" modified="20200502111835520" modifier="jd" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/search" type="text/vnd.tiddlywiki" revision="2" bag="default">
 <pre>hide</pre>
 </div>
-<div created="20190201102652423" creator="jd" modified="20200429204042830" modifier="jd" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/site-subtitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190201102652423" creator="jd" modified="20200502113430250" modifier="jd" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/site-subtitle" type="text/vnd.tiddlywiki" revision="10" bag="default">
 <pre>show</pre>
 </div>
-<div created="20190201102745176" creator="jd" modified="20200501082728590" modifier="jd" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/site-title" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190201102745176" creator="jd" modified="20200502113431472" modifier="jd" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/site-title" type="text/vnd.tiddlywiki" revision="14" bag="default">
 <pre>show</pre>
 </div>
-<div created="20200429155415046" modified="20200429204054297" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/tabs" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20200429155415046" modified="20200502112110018" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/tabs" type="text/vnd.tiddlywiki" revision="2" bag="default">
 <pre>show</pre>
 </div>
 <div created="20200429115358547" modified="20200429115405543" title="$:/config/topbar/sticky" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10151,6 +10168,16 @@ $(currentTiddler)$(?i)
 <div created="20200429055511434" modified="20200501215527527" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[[Welcome to Drift]]</pre>
 </div>
+<div plugin-type="import" status="pending" title="$:/Import" type="application/json" revision="2" bag="default">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;Untitled&quot;: {
+            &quot;title&quot;: &quot;Untitled&quot;,
+            &quot;text&quot;: &quot;Plugin - TWCrosslinks&quot;
+        }
+    }
+}</pre>
+</div>
 <div title="$:/isEncrypted" revision="0" bag="default">
 <pre>no</pre>
 </div>
@@ -10970,8 +10997,35 @@ html body.tc-body {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200502003202142" modified="20200502003228861" title="$:/state/sidebar" revision="3" bag="default">
+<div created="20200502114330348" modified="20200502160429192" title="$:/state/DriftHomeTabs-651803151" revision="17" bag="default">
+<pre>Drift</pre>
+</div>
+<div created="20200502104132267" modified="20200502114301464" title="$:/state/searchtab-1444756290" revision="2" bag="default">
+<pre>$:/core/ui/AdvancedSearch/Standard</pre>
+</div>
+<div created="20200502114201170" modified="20200502114201170" title="$:/state/showeditpreview" revision="1" bag="default">
+<pre>yes</pre>
+</div>
+<div created="20200502113742990" modified="20200502160606196" title="$:/state/sidebar" revision="11" bag="default">
 <pre>no</pre>
+</div>
+<div created="20200502104153539" modified="20200502113532703" title="$:/state/tab--1963855381" revision="7" bag="default">
+<pre>$:/core/ui/ControlPanel/StoryView</pre>
+</div>
+<div created="20200502104151166" modified="20200502111707730" title="$:/state/tab-1749438307" revision="3" bag="default">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
+</div>
+<div created="20200502111717334" modified="20200502111752928" title="$:/state/tab-738187504" revision="5" bag="default">
+<pre>$:/themes/jd/Mono/Config/SidebarSegments</pre>
+</div>
+<div created="20200502153640387" modified="20200502153642023" title="$:/state/tab-97055648" revision="3" bag="default">
+<pre>$:/ak/plugins/TWCrossLinks/core/tagging</pre>
+</div>
+<div created="20200502160443422" modified="20200502160445732" title="$:/state/tab/moresidebar-1850697562" revision="3" bag="default">
+<pre>$:/core/ui/MoreSideBar/Orphans</pre>
+</div>
+<div created="20200502103957661" modified="20200502160601163" title="$:/state/tab/sidebar--595412856" revision="14" bag="default">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/IsAnonymous" revision="1" bag="default">
 <pre>yes</pre>
@@ -10988,7 +11042,10 @@ html body.tc-body {
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div list="[[Welcome to Drift]]" title="$:/StoryList" revision="1" bag="default">
+<div created="20200502113628469" list="[[Welcome to Drift]]" modified="20200502160346444" title="$:/StoryList" type="text/vnd.tiddlywiki" revision="139" bag="default">
+<pre></pre>
+</div>
+<div created="20200502112123171" list="$:/core/ui/SideBarSegments/site-title $:/core/ui/SideBarSegments/site-subtitle $:/core/ui/SideBarSegments/page-controls $:/core/ui/SideBarSegments/search $:/core/ui/SideBarSegments/tabs" modified="20200502112123171" title="$:/tags/SideBarSegment" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20200430104537151" modified="20200430104545533" title="$:/Temp/newlink" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11353,6 +11410,669 @@ toolbar-done-button:
 untagged-background: &lt;&lt;colour very-muted-foreground&gt;&gt;
 very-muted-foreground: rgba(255, 255, 255, 0.12)</pre>
 </div>
+<div created="20190130145325995" creator="jd" modified="20200502113418858" modifier="jd" tags="$:/tags/Stylesheet" title="$:/themes/jd/Mono/Stylesheet" revision="22" bag="default">
+<pre>\define bkrpnt() {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}
+\define sidebar() {{$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth}}
+\define fontsize() {{$:/themes/tiddlywiki/vanilla/metrics/fontsize}}
+
+
+
+/* MAIN */
+
+@media (min-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.tc-sidebar-scrollable {
+    position: fixed;
+    top: {{$:/themes/jd/Mono/Database##header-position-desktop}};
+    left: 0;
+    bottom: 0;
+    right: unset;
+    width: &lt;&lt;sidebar&gt;&gt;;
+    margin: 0;
+    padding: 0 2em 2em 2em;
+}
+.tc-story-river {
+    width: calc(100% - &lt;&lt;sidebar&gt;&gt;);
+    padding: 0 2em 4em 2em;
+}
+&lt;$list filter=&quot;[[$:/view]!text[zoomin]]&quot;&gt;
+.tc-story-river { top: 0.25em; }
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/view]text[zoomin]]&quot;&gt;
+.tc-story-river {
+    top: calc({{$:/themes/jd/Mono/Database##header-position-desktop}} + 0.25em);
+}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/state/sidebar]!text[no]]&quot; variable=&quot;stateCheck&quot;&gt;
+.tc-story-river {
+    left: &lt;&lt;sidebar&gt;&gt;;
+    right: 0;
+}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/state/sidebar]text[no]]&quot; variable=&quot;stateCheck&quot;&gt;
+.tc-story-river {
+    left: calc(&lt;&lt;sidebar&gt;&gt; / 2);
+    right: calc(&lt;&lt;sidebar&gt;&gt; / 2);
+}
+&lt;/$list&gt;
+.tc-tiddler-frame {
+    margin: 0 0 2em 0;
+    width: 100%;
+    border-radius: 1px;
+    &lt;&lt;box-shadow &quot;2px 2px 5px rgba(0, 0, 0, 0.15)&quot;&gt;&gt;
+}
+.tc-storyview-zoomin-tiddler {
+    width: calc(100% - 4em) !important;
+}
+}
+
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.tc-sidebar-scrollable { padding: 0 1em 2em 1em; }
+&lt;$list filter=&quot;[[$:/view]!text[zoomin]]&quot;&gt;
+.tc-sidebar-header { padding: 0; }
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/view]text[zoomin]]&quot;&gt;
+.tc-sidebar-header { 
+    padding-top: {{$:/themes/jd/Mono/Database##header-position-desktop}};
+    padding-right: 0em;
+    padding-bottom: 0em;
+    padding-left: 0em;
+}
+&lt;/$list&gt;
+.tc-tiddler-frame { margin-bottom: 2px !important; }
+}
+
+&lt;$list filter=&quot;[[$:/state/sidebar]!text[no]]&quot; variable=&quot;stateCheck&quot;&gt;
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.tc-story-river { display: none; }
+}
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[[$:/state/sidebar]text[no]]&quot; variable=&quot;stateCheck&quot;&gt;
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.tc-sidebar-scrollable { padding-top: 0; padding-bottom: 0; }
+}
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[[$:/themes/tiddlywiki/vanilla/options/stickytitles]text[yes]]&quot; variable=&quot;stateCheck&quot;&gt;
+@media (min-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.tc-tiddler-title {
+    top: calc({{$:/themes/jd/Mono/Database##header-position-desktop}} - .25em);
+}
+}
+
+.tc-titlebar {
+    line-height: 0;
+}
+
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+&lt;$list filter=&quot;[[$:/state/searchbar]text[show]]&quot;&gt;
+.tc-tiddler-edit-frame .tc-tiddler-title {
+    top: {{$:/themes/jd/Mono/Database##header-position-mobile-yes-searchbar}};
+}
+.tc-tiddler-view-frame .tc-tiddler-title {
+    top: {{$:/themes/jd/Mono/Database##header-position-mobile-yes-searchbar}};
+}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/state/searchbar]!text[show]]&quot;&gt;
+.tc-tiddler-title {
+    top: {{$:/themes/jd/Mono/Database##header-position-mobile-no-searchbar}};
+}
+&lt;/$list&gt;
+}
+&lt;/$list&gt;
+
+.tc-sidebar-scrollable .tc-tab-buttons,
+.tc-topbar .tc-page-controls button,
+.tc-topbar .tc-search button {
+    padding: 0;
+}
+
+/* TOPBAR */
+
+&lt;$list filter=&quot;[[$:/view]!text[zoomin]]&quot;&gt;
+&lt;$list filter=&quot;[[$:/config/topbar/sticky]!text[no]]&quot;&gt;
+.tc-topbar { position: sticky; }
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) { 
+.tc-story-river { margin-top: -2.5em; }
+}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/config/topbar/sticky]text[no]]&quot;&gt;
+.tc-topbar { position: fixed; }
+@media (min-width: &lt;&lt;bkrpnt&gt;&gt;) { 
+.tc-topbar { height: 56px; }
+.tc-story-river { margin-top: 56px; }
+}
+&lt;$list filter=&quot;[[$:/state/searchbar]!text[hide]]&quot;&gt;
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) { 
+.tc-topbar { height: 94px; }
+.tc-story-river { margin-top: calc(48px + 1em); }
+}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/state/searchbar]text[hide]]&quot;&gt;
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) { 
+.tc-topbar { height: 48px; }
+.tc-story-river { margin-top: 1em; }
+}
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[[$:/view]text[zoomin]]&quot;&gt;
+.tc-topbar { position: fixed; }
+&lt;/$list&gt;
+
+.tc-topbar {
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25em 1em;
+    background: &lt;&lt;colour page-background&gt;&gt;;
+    z-index: 900;
+}
+
+@media (min-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.tc-topbar {
+    padding: 1em 2em;
+    max-height: {{$:/themes/jd/Mono/Database##header-position-desktop}};
+}
+}
+
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.tc-topbar &gt; * {
+    width: 100%;
+}
+.tc-topbar .tc-topbar-left {
+    padding: 0.75em 0;
+}
+.tc-topbar .tc-topbar-right .tc-search {
+    margin-bottom: 0.5em;
+}
+.tc-topbar-right {
+    font-size: 1.25em !important;
+}
+.tc-topbar .tc-page-controls {
+    justify-content: space-between;
+    width: 100%;
+}
+}
+
+.tc-topbar .tc-page-controls,
+.tc-topbar .tc-search {
+    display: flex;
+    align-items: center;
+}
+
+/* TOPBAR SEARCH */
+
+.tc-topbar .tc-search {
+    border: 1px solid &lt;&lt;colour table-border&gt;&gt;;
+    background: &lt;&lt;colour page-background&gt;&gt;;
+    border-radius: 0;
+    padding: 0.25em;
+}
+.tc-topbar .tc-search input {
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+.tc-topbar .tc-search .tc-reveal {
+    display: flex;
+}
+
+/* controls */
+
+.tc-topbar .tc-page-controls {
+    margin: 0;
+}
+.tc-topbar .tc-page-controls button &gt; span,
+.tc-topbar .tc-page-controls button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* DROPDOWNS */
+
+.tc-drop-down,
+.tc-block-dropdown {
+    &lt;&lt;box-shadow &quot;2px 2px 5px rgba(0, 0, 0, 0.25)&quot;&gt;&gt;
+    border-radius: 1px;
+}
+
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+
+.tc-search .tc-drop-down,
+.tc-search .tc-block-dropdown,
+.tc-page-controls .tc-drop-down,
+.tc-page-controls .tc-block-dropdown {
+    position:fixed;
+    left:1em;
+    min-width: calc(100% - 2em);
+    max-width: calc(100% - 2em);
+    max-height: calc(100% - 10em);
+    overflow: auto;
+}
+
+.tc-drop-down,
+.tc-block-dropdown {
+    max-height: 22em;
+    overflow: auto;
+    font-size: calc(&lt;&lt;fontsize&gt;&gt;*1.2) !important;
+    font-weight: normal;
+    line-height: 1.2;
+}
+}
+
+/* TOPBAR SEARCH DROPDOWN */
+
+.tc-block-dropdown.tc-search-drop-down {
+    padding: 0.5em;
+}
+
+.tc-block-dropdown.tc-search-drop-down .tc-tab-buttons {
+    margin-bottom: -3px;
+    padding-top: 0;
+}
+
+.tc-block-dropdown.tc-search-drop-down .tc-search-results { width: 100%; }
+
+.tc-block-dropdown.tc-search-drop-down .tc-search { display: none; }
+
+@media (min-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.tc-block-dropdown.tc-search-drop-down {
+    margin: 0 0 0 -24em;
+    width: calc(100% + 24em);
+    max-height: 42em;
+    overflow: auto;
+}
+.tc-topbar-right .tc-search .tc-block-dropdown,
+.tc-topbar-right .tc-search .tc-drop-down {
+    position: absolute;
+    right: 0;
+}
+.tc-topbar-right .tc-search .tc-drop-down {
+    padding: 1em;
+    min-width: 10em;
+    max-width: 10em;
+}
+}
+
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.tc-block-dropdown.tc-search-drop-down {
+    margin: 0;
+    width: 100%;
+    overflow: auto;
+}
+}
+
+/* TOPBAR SEARCH DROPDOWN FLEX */
+
+/* .tc-block-dropdown.tc-search-drop-down { display: flex; } on searchbar template under reveal */
+
+.tc-block-dropdown.tc-search-drop-down &gt; p {
+    display: flex;
+    margin: 0;
+    width: 100%;
+}
+
+.tc-block-dropdown.tc-search-drop-down &gt; p &gt;.tc-tab-set {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tc-block-dropdown.tc-search-drop-down &gt; p &gt;.tc-tab-set &gt; .tc-tab-content {
+    display: flex;
+    flex: 1 1 auto;
+    overflow: auto;
+    margin-top: 0;
+}
+
+
+&lt;$reveal type=&quot;match&quot; state=&quot;$:/state/styled-frames&quot; text=&quot;yes&quot; default=&quot;yes&quot;&gt;
+
+/* VIEW &amp; EDIT FRAME */
+
+.tc-subtitle,
+.tc-tiddler-edit-frame input.tc-titlebar.tc-edit-texteditor,
+.tc-tiddler-view-frame .tc-titlebar h2.tc-title {
+    font-family: monospace;
+}
+
+/* VIEW FRAME */
+
+.tc-tiddler-view-frame .tc-title {
+    font-weight: bold;
+}
+
+.tc-tiddler-view-frame .tc-tiddler-title {
+    font-size: 1.5em;
+    margin: 0 -1em;
+    padding: 0.25em 1em;
+}
+
+.tc-tiddler-view-frame .tc-titlebar {
+    font-size: 1em;
+}
+
+.tc-tiddler-view-frame .tc-titlebar h2.tc-title {
+    font-size: 0.75em;
+}
+
+.tc-tiddler-view-frame .tc-tiddler-controls {
+    font-size: 1.5em;
+}
+
+.tc-tiddler-view-frame .tc-tiddler-controls,
+.tc-tiddler-view-frame .tc-tiddler-controls &gt; span &gt; button, 
+.tc-tiddler-view-frame .tc-tiddler-controls &gt; span &gt; span &gt; button, 
+.tc-tiddler-view-frame .tc-tiddler-controls &gt; span &gt; span &gt; span &gt; button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tc-tiddler-view-frame .tc-tiddler-title-icon svg {
+    max-height: 0.65em;
+}
+
+/* EDIT FRAME */
+
+.tc-tiddler-edit-frame .tc-tiddler-edit-title {
+    color: transparent;
+    line-height: 0;
+}
+
+.tc-tiddler-edit-frame input.tc-titlebar.tc-edit-texteditor {
+    font-size: 1.2em; 
+}
+
+.tc-tiddler-edit-frame .tc-message-box { margin: 0; }
+
+.tc-tiddler-edit-frame iframe.tc-edit-texteditor { margin-top: 0 !important; }
+
+.tc-tiddler-edit-frame .tc-editor-toolbar { background: &lt;&lt;colour tiddler-editor-border&gt;&gt;; }
+
+.tc-tiddler-edit-frame .tc-editor-toolbar .tc-btn-invisible  { background: transparent; }
+
+.tc-tiddler-edit-frame .tc-editor-toolbar .tc-btn-invisible {
+    transition: 200ms fill;
+    fill: &lt;&lt;colour foreground&gt;&gt;;
+}
+
+.tc-tiddler-edit-frame .tc-editor-toolbar .tc-btn-invisible:hover {
+    background: transparent;
+    fill: &lt;&lt;colour primary&gt;&gt;;
+}
+
+input::placeholder {
+   font-size: 0.9em; 
+}
+
+.tc-tiddler-edit-frame input.tc-titlebar.tc-edit-texteditor, 
+.tc-tiddler-edit-frame .tc-edit-tags, 
+.tc-tiddler-edit-frame .tc-edit-field-add-name input.tc-edit-texteditor, 
+.tc-tiddler-edit-frame .tc-edit-field-add-value input.tc-edit-texteditor, 
+.tc-tiddler-edit-frame input.tc-edit-typeeditor.tc-popup-handle, 
+.tc-tiddler-edit-frame input.tc-edit-texteditor.tc-popup-handle {
+    border: 1px solid &lt;&lt;colour background&gt;&gt;; 
+    border-bottom: 1px solid &lt;&lt;colour tiddler-editor-border&gt;&gt;;
+    &lt;&lt;box-shadow &quot;none&quot;&gt;&gt;
+} 
+
+.tc-tiddler-edit-frame textarea { 
+    border: 1px solid &lt;&lt;colour tiddler-editor-border&gt;&gt;;
+    &lt;&lt;box-shadow &quot;none&quot;&gt;&gt;
+} 
+
+.tc-tiddler-edit-frame textarea,
+.tc-tiddler-edit-frame iframe.tc-edit-texteditor {
+    font-size: {{$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize}};
+    border: 1px solid &lt;&lt;colour background&gt;&gt;; 
+    &lt;&lt;box-shadow &quot;none&quot;&gt;&gt;
+}
+
+.tc-tiddler-edit-frame input.tc-titlebar.tc-edit-texteditor {
+    font-weight: bold;
+}
+
+.tc-tiddler-edit-frame .tc-type-selector {
+    padding-bottom: 10px;
+    border-bottom: 1px solid &lt;&lt;colour tiddler-editor-border&gt;&gt;;
+}
+
+&lt;/$reveal&gt;
+
+
+/* TIMELINE */
+
+.jd-timeline-wrapper {
+    position: relative;
+}
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.jd-timeline-wrapper {
+    padding: 0 1em;
+    width: 100%;
+}
+}
+ .jd-paperview-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.25em 0;
+}
+.jd-paperview {
+    position:relative;
+    width: 31%;
+    margin: 1%;
+    overflow:hidden;
+    border: 0.5px solid {{$:/themes/jd/Mono/Database##grid-item-border}};
+    border-radius: 1px;
+    &lt;&lt;box-shadow &quot;2px 2px 5px rgba(0, 0, 0, 0.09)&quot;&gt;&gt;
+    text-align: left;
+}
+@media (min-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.jd-paperview { height: 26em; }
+}
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.jd-paperview { height: 12em; }
+}
+.jd-paperview,
+.jd-paperview-end {
+    background: {{$:/themes/jd/Mono/Database##grid-item-background}} !important;
+}
+.jd-paperview-end {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    height: 5px;
+}
+.jd-paperview-internal {
+    transform: scale(0.7);
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    top: -5%;
+    left: -5%;
+    pointer-events: none;
+}
+.jd-paperview-wrapper .tc-menu-list-subitem { width: 100%; }
+
+@media (min-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.jd-paperview-end {
+    box-shadow: 0 0 10px 10px {{$:/themes/jd/Mono/Database##grid-item-background}};
+}
+}
+
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.jd-paperview-end {
+    box-shadow: 0 0 5px 5px {{$:/themes/jd/Mono/Database##grid-item-background}};
+}
+
+}
+.jd-paperview-date {
+    padding: 0.1em 0;
+}
+.jd-paperview-date {
+    position: sticky;
+    z-index: 1;
+    background: {{$:/themes/jd/Mono/Database##header-background}};
+    box-shadow: 0 0 2px 2px {{$:/themes/jd/Mono/Database##header-background}};
+}
+
+@media (min-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.jd-paperview-date {
+    top: {{$:/themes/jd/Mono/Database##header-position-desktop}};
+}
+}
+
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+&lt;$list filter=&quot;[[$:/state/searchbar]text[show]]&quot;&gt;
+.jd-paperview-date {
+    top: {{$:/themes/jd/Mono/Database##header-position-mobile-yes-searchbar}};
+}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/state/searchbar]!text[show]]&quot;&gt;
+.jd-paperview-date {
+    top: {{$:/themes/jd/Mono/Database##header-position-mobile-no-searchbar}};
+}
+&lt;/$list&gt;
+}
+
+
+/* MISC */
+
+hr {
+    border: none;
+    border-top: 1px solid &lt;&lt;colour table-border&gt;&gt;;
+    height: 1px;
+}
+
+.tc-sidebar-scrollable .tc-tab-buttons,
+.tc-tiddler-frame .tc-tab-buttons {
+    margin-bottom: -3px;
+}
+
+.tc-story-river .tc-tab-buttons.tc-vertical button {
+    border-top: 1px solid &lt;&lt;colour tab-border&gt;&gt;;
+    border-left: 1px solid &lt;&lt;colour tab-border&gt;&gt;;
+    border-bottom: 1px solid &lt;&lt;colour tab-border&gt;&gt;;
+    border-right: 1px solid transparent;
+}
+
+.tc-story-river .tc-tab-buttons.tc-vertical .tc-tab-selected {
+    border-top: 1px solid &lt;&lt;colour tab-border-selected&gt;&gt;;
+    border-left: 1px solid &lt;&lt;colour tab-border-selected&gt;&gt;;
+    border-bottom: 1px solid &lt;&lt;colour tab-border-selected&gt;&gt;;
+    border-right: 1px solid transparent;
+}
+
+.tc-sidebar-lists .tc-tab-set .tc-tab-divider {
+    border-top: none;
+    height: 1px;
+    background-image: linear-gradient(left, &lt;&lt;colour sidebar-tab-divider&gt;&gt; 20%, transparent 100%);
+    background-image: -o-linear-gradient(left, &lt;&lt;colour sidebar-tab-divider&gt;&gt; 20%, transparent 100%);
+    background-image: -moz-linear-gradient(left, &lt;&lt;colour sidebar-tab-divider&gt;&gt; 20%, transparent 100%);
+    background-image: -webkit-linear-gradient(left, &lt;&lt;colour sidebar-tab-divider&gt;&gt; 20%, transparent 100%);
+    background-image: -ms-linear-gradient(left, &lt;&lt;colour sidebar-tab-divider&gt;&gt; 20%, transparent 100%);
+}
+
+/* SIDEBAR MORE TAB BUTTONS */
+
+.tc-more-sidebar .tc-tab-buttons.tc-vertical {
+    margin-top: 1em;
+}
+
+.tc-more-sidebar .tc-tab-buttons.tc-vertical &gt; button {
+    margin-bottom: -1px;
+    border-top: 1px solid &lt;&lt;colour sidebar-tab-border&gt;&gt;;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid &lt;&lt;colour sidebar-tab-border&gt;&gt;;
+    border-left: 1px solid &lt;&lt;colour sidebar-tab-border&gt;&gt;;
+}
+
+.tc-more-sidebar .tc-tab-buttons.tc-vertical &gt; button.tc-tab-selected {
+    border-top: 1px solid &lt;&lt;colour sidebar-tab-border-selected&gt;&gt;;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid &lt;&lt;colour sidebar-tab-border-selected&gt;&gt;;
+    border-left: 1px solid &lt;&lt;colour sidebar-tab-border-selected&gt;&gt;;
+}
+
+.tc-more-sidebar .tc-tab-content.tc-vertical {
+    margin-left: 1px;
+}
+
+ul, li {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tc-menu-list-item {
+    padding-left: 5px;
+    text-indent: -5px;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    -webkit-word-break: break-all !important;
+    -moz-word-break: break-all !important;
+    -ms-word-break: break-all !important;
+    -o-word-break: break-all !important;
+    word-break: break-all !important;
+}
+
+button, input { outline: none; }
+
+button, input:not([type]) {
+    border-radius: 2px;
+}
+
+input:not([type]) {
+    border: 1px solid &lt;&lt;colour tiddler-editor-border&gt;&gt;;
+    padding: 2px 4px;
+    margin: 2px;
+}
+
+button {
+    border: 1px solid &lt;&lt;colour button-border&gt;&gt;;
+    padding: 6px 16px;
+    margin: 2px;
+}
+
+@media (max-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.desktop-only {
+    display: none !important; pointer-events: none;
+}
+}
+
+@media (min-width: &lt;&lt;bkrpnt&gt;&gt;) {
+.mobile-only {
+    display: none !important; pointer-events: none;
+}
+}
+
+.tc-topbar.tc-topbar-left,
+.tc-topbar.tc-topbar-right {
+    display: none; pointer-events: none;
+}
+
+.tc-dropzone &gt; p,
+.tc-topbar p,
+.tc-sidebar-lists-template &gt; p,
+.tc-topbar .tc-sidebar-lists &gt; p { margin: 0; }
+
+@media (min-width: &lt;&lt;bkrpnt&gt;&gt;) {
+div::-webkit-scrollbar { background: rgba(0, 0, 0, 0.12); }
+div::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); }
+}
+
+.tc-notification {
+    &lt;&lt;box-shadow &quot;2px 2px 5px rgba(0, 0, 0, 0.45)&quot;&gt;&gt;
+    border-radius: 1px;
+}</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.22" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -11486,11 +12206,24 @@ very-muted-foreground: rgba(255, 255, 255, 0.12)</pre>
 <div created="20200429112839464" modified="20200429112848984" title="$:/themes/tiddlywiki/vanilla/options/stickytitles" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div created="20200429143346003" modified="20200501234748667" title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20200429143346003" modified="20200502113616956" title="$:/view" type="text/vnd.tiddlywiki" revision="10" bag="default">
 <pre>zoomin</pre>
 </div>
-<div created="20200501220821819" modified="20200501221314884" tags="" title="Credits &amp; Dependencies" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>!!Theme
+<div created="20200502114035466" modified="20200502114254824" tags="" title="Changelog" revision="1" bag="default">
+<pre>''0.0.2'' - 2020-05-02
+
+* Fixing view on mobile when &quot;Zoomin&quot; Story view is selected
+
+''v0.0.1'' - 2020-05-02
+
+*Initial release</pre>
+</div>
+<div created="20200501220821819" modified="20200502160315575" tags="" title="Credits &amp; Dependencies" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<pre>!!Credits
+ *[[Abraham|https://twitter.com/ABSamma/status/1256536729940570113?s=20]] for his help fixing the CSS in mobile view
+
+!!Dependencies
+!!!Theme
 *[[Mono Theme|http://j.d.mono.tiddlyspot.com/]]
 !!! Plugins
 * [[Autocomplete|http://snowgoon88.github.io/TW5-extendedit]]</pre>
@@ -11546,6 +12279,9 @@ I am just a transcluded tiddler </pre>
 Click to open //Freelinks// tiddler
 &lt;/$button&gt;
 </pre>
+</div>
+<div created="20200502083645471" modified="20200502083738332" tags="" title="Example: No Inbound links" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>This Tiddler has no footer since it is not referenced anywhere else in [[Drift]]</pre>
 </div>
 <div created="20200501224438750" modified="20200501224535930" tags="Tag1 Tag2" title="Example: Tags Source" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>This is a tiddler with some tags
@@ -11603,16 +12339,27 @@ https://groups.google.com/forum/#!topic/tiddlywiki/QgPYL0JhxcY</pre>
 
 In this case the &quot;Keywords&quot; tab is populated</pre>
 </div>
+<div created="20200502093906030" modified="20200502155747494" tags="" title="Plugin - TWCrosslinks" type="text/vnd.tiddlywiki" revision="2" bag="default">
+<pre>As requested, I have packaged the Keyword and the Cross-Links footer in a separate plugin [[TWCrossLinks|$:/ak/plugins/TWCrossLinks]]
+
+$:/ak/plugins/TWCrossLinks
+
+You can install it by just drag-n-drop the above link in your TiddlyWiki or by direct download from [[GitHub|https://github.com/akhater/TWCrossLinks]]
+
+</pre>
+</div>
 <div created="20200501224605868" modified="20200501224649965" title="Tag1" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>This is the tiddler of Tag1, even if it wasn't created you would see the same footer with the various &quot;inbound links&quot; related to this Tag (Check Tag2 for example).
 
 In this case the &quot;Tagged&quot; tab is populated</pre>
 </div>
-<div created="20200501232052520" modified="20200501232231506" tags="" title="Todo" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>For now I am sharing this as a &quot;complete&quot; TiddlyWiki file. However I am planning on packaging the &quot;inbound links&quot; part as a separate plugin for those who wish to use it alone</pre>
+<div created="20200501232052520" modified="20200502100448849" tags="" title="Todo" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>~~For now I am sharing this as a &quot;complete&quot; TiddlyWiki file. However I am planning on packaging the &quot;inbound links&quot; part as a separate plugin for those who wish to use it alone~~
+
+* ''2020-05-02'' [[TWCrossLinks|Plugin - TWCrosslinks]] is now available as standalone plugin</pre>
 </div>
-<div created="20200501210858113" modified="20200501234023307" tags="" title="Welcome to Drift" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&lt;&lt;tabs &quot;[[Drift]] [[Features]] [[Examples]] [[Todo]] [[Credits &amp; Dependencies]] [[Feedback &amp; Suggestions]]&quot; &quot;Drift&quot;  &quot;$:/state/DriftHomeTabs&quot; &quot;tc-vertical&quot;&gt;&gt;</pre>
+<div created="20200501210858113" modified="20200502114324839" tags="" title="Welcome to Drift" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<pre>&lt;&lt;tabs &quot;[[Drift]] [[Features]] [[Examples]] [[Todo]] [[Changelog]] [[Credits &amp; Dependencies]]  [[Feedback &amp; Suggestions]]&quot; &quot;Drift&quot;  &quot;$:/state/DriftHomeTabs&quot; &quot;tc-vertical&quot;&gt;&gt;</pre>
 </div>
 
 
