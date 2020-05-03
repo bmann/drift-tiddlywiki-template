@@ -235,8 +235,6 @@ Error message and password prompt
 
 <li>$:/ak/plugins/TWCrossLinks/config/default</li>
 
-<li>$:/ak/plugins/TWCrossLinks/ui/tabs</li>
-
 <li>$:/ak/ui/transclude.css</li>
 
 <li>$:/config/EditorTypeMappings/text/vnd.tiddlywiki</li>
@@ -319,11 +317,7 @@ Error message and password prompt
 
 <li>$:/SplashScreen</li>
 
-<li>$:/state/tab--542796719</li>
-
-<li>$:/state/tab/moresidebar-1850697562</li>
-
-<li>$:/state/tab/sidebar--595412856</li>
+<li>$:/state/sidebar</li>
 
 <li>$:/status/IsAnonymous</li>
 
@@ -463,18 +457,18 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
 &lt;/$reveal&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20200502092707287" description="Discover all your intra tiddlers links" modified="20200502093419195" name="TWCrossLinks" plugin-type="plugin" tags="" title="$:/ak/plugins/TWCrossLinks" type="application/json" version="0.0.3" revision="0" bag="default">
+<div created="20200502092707287" description="Discover all your intra tiddlers links" list="config readme change.log" modified="20200503115100480" name="TWCrossLinks" plugin-type="plugin" tags="" title="$:/ak/plugins/TWCrossLinks" type="application/json" version="0.0.7" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/ak/plugins/TWCrossLinks/config/default&quot;: {
-            &quot;text&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/backlinks&quot;,
+            &quot;created&quot;: &quot;20200429195808011&quot;,
+            &quot;text&quot;: &quot;{\n    \&quot;DefaultFoldData\&quot;: \&quot;hide\&quot;,\n    \&quot;DefaultTab\&quot;: \&quot;$:/ak/plugins/TWCrossLinks/core/backlinks\&quot;\n}&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;0&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;type&quot;: &quot;application/json&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/config/default&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200502082431500&quot;,
-            &quot;created&quot;: &quot;20200429195808011&quot;
+            &quot;modified&quot;: &quot;20200503114953862&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/core/backlinks&quot;: {
             &quot;created&quot;: &quot;20200429182330136&quot;,
@@ -522,13 +516,13 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
         },
         &quot;$:/ak/plugins/TWCrossLinks/ui/footer&quot;: {
             &quot;created&quot;: &quot;20200430143629582&quot;,
-            &quot;text&quot;: &quot;\\define regexpattern()\n$(currentTiddler)$(?i)\n\\end\n&lt;!--Show references Backlinks/Keywords/Tags/Freelinks--&gt;\n&lt;$set name=\&quot;text-pattern\&quot; value=&lt;&lt;regexpattern&gt;&gt;&gt;\n&lt;$list filter=\&quot;[all[current]tagging[]]  [search:keywords&lt;currentTiddler&gt;]  [!is[system]regexp:text&lt;text-pattern&gt;] [!is[system]all[current]backlinks[]!tag[hide]] -[is[current]] +[limit[1]]\&quot; variable=none&gt;\n    &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot; tag=\&quot;div\&quot; retain=\&quot;yes\&quot; animate=\&quot;yes\&quot;&gt;\n        ,,&lt;hr /&gt;,,\n    &lt;span class=\&quot;hideprint\&quot;&gt;\n         &lt;span style=\&quot;font-size:0.85em\&quot;&gt;\n        //Inbound Links:// &lt;/span&gt;\n        &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot;&gt;\n            &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;show\&quot;&gt;{{$:/core/images/unfold-button}}&lt;/$button&gt;    &lt;hr /&gt;\n        &lt;/$reveal&gt;\n            &lt;$reveal type=\&quot;match\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot;&gt;\n                &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;hide\&quot;&gt;{{$:/core/images/fold-button}}&lt;/$button&gt;   &lt;hr /&gt;\n&lt;!--                &lt;span class=\&quot;indent1\&quot;&gt; --&gt;\n                    &lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TWCrossLinksSegment]!has[draft.of]] [[$:/ak/plugins/TWCrossLinks/ui/tabs]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;block\&quot;/&gt; &lt;/$list&gt;\n&lt;!--                &lt;/span&gt; --&gt;\n            &lt;/$reveal&gt;\n        &lt;/span&gt;\n    &lt;/$reveal&gt;\n&lt;/$list&gt;\n&lt;/$set&gt;&quot;,
+            &quot;text&quot;: &quot;\\define regexpattern()\n$(currentTiddler)$(?i)\n\\end\n&lt;!--Show references Backlinks/Keywords/Tags/Freelinks--&gt;\n&lt;$set name=\&quot;text-pattern\&quot; value=&lt;&lt;regexpattern&gt;&gt;&gt;\n&lt;$list filter=\&quot;[all[current]tagging[]]  [search:keywords&lt;currentTiddler&gt;]  [!is[system]regexp:text&lt;text-pattern&gt;] [!is[system]all[current]backlinks[]!tag[hide]] -[is[current]] +[limit[1]]\&quot; variable=none&gt;\n    &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot; tag=\&quot;div\&quot; retain=\&quot;yes\&quot; animate=\&quot;yes\&quot;&gt;\n        ,,&lt;hr /&gt;,,\n    &lt;span class=\&quot;hideprint\&quot;&gt;\n         &lt;span style=\&quot;font-size:0.85em\&quot;&gt;\n        //Inbound Links:// &lt;/span&gt;\n&lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[DefaultFoldData]]\&quot; variable=DefaultFoldState&gt;\n        &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=&lt;&lt;DefaultFoldState&gt;&gt; &gt;\n            &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;show\&quot;&gt;{{$:/core/images/unfold-button}}&lt;/$button&gt;    &lt;hr /&gt;\n        &lt;/$reveal&gt;\n            &lt;$reveal type=\&quot;match\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=&lt;&lt;DefaultFoldState&gt;&gt; &gt;\n                &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;hide\&quot;&gt;{{$:/core/images/fold-button}}&lt;/$button&gt;   &lt;hr /&gt;\n&lt;!--                &lt;span class=\&quot;indent1\&quot;&gt; --&gt;\n                    &lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TWCrossLinksSegment]!has[draft.of]] [[$:/ak/plugins/TWCrossLinks/ui/tabs]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;block\&quot;/&gt; &lt;/$list&gt;\n&lt;!--                &lt;/span&gt; --&gt;\n            &lt;/$reveal&gt;\n&lt;/$list&gt;\n        &lt;/span&gt;\n    &lt;/$reveal&gt;\n&lt;/$list&gt;\n&lt;/$set&gt;&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;0&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/footer&quot;,
             &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
-            &quot;modified&quot;: &quot;20200502093210182&quot;
+            &quot;modified&quot;: &quot;20200503114406300&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/ui/footer.kwd&quot;: {
             &quot;created&quot;: &quot;20200428214251454&quot;,
@@ -562,29 +556,45 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
         },
         &quot;$:/ak/plugins/TWCrossLinks/ui/tabs&quot;: {
             &quot;created&quot;: &quot;20200429182054776&quot;,
-            &quot;text&quot;: &quot;&lt;$macrocall $name=\&quot;tabs\&quot; tabsList=\&quot;[all[shadows+tiddlers]tag[$:/tags/TWCrossLinks]!has[draft.of]]\&quot; default=\&quot;{{$:/ak/plugins/TWCrossLinks/config/default}}\&quot;/&gt;&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[DefaultTab]]\&quot; variable=DefaultTab&gt;\n&lt;$macrocall $name=\&quot;tabs\&quot; tabsList=\&quot;[all[shadows+tiddlers]tag[$:/tags/TWCrossLinks]!has[draft.of]]\&quot; default=&lt;&lt;DefaultTab&gt;&gt; /&gt;\n&lt;/$list&gt;\n&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;0&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/tabs&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200502092625774&quot;
+            &quot;modified&quot;: &quot;20200503114538223&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/change.log&quot;: {
             &quot;created&quot;: &quot;20200502091404523&quot;,
-            &quot;text&quot;: &quot;''2020-05-02''\n\n* Initial packaging and release&quot;,
+            &quot;text&quot;: &quot;''2020-05-03'': v0.0.7\n\n* Added configuration panel, can be found at $:/ak/plugins/TWCrossLinks\n** You can now set the Default state of the \&quot;inbound links\&quot; {Shown / Hidden}\n** You can now set the Default \&quot;inbound links\&quot; tab\n\n''2020-05-02'': v0.0.3\n\n* Initial packaging and release&quot;,
             &quot;tags&quot;: &quot;&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/change.log&quot;,
-            &quot;modified&quot;: &quot;20200502091509266&quot;
+            &quot;modified&quot;: &quot;20200503114700750&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/config&quot;: {
+            &quot;created&quot;: &quot;20200503100751953&quot;,
+            &quot;text&quot;: &quot;''By default the //inbound links// should be:'' &lt;br /&gt;\n&lt;$tiddler tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot;&gt;\n&lt;$radio index=\&quot;DefaultFoldData\&quot; value=\&quot;show\&quot;&gt; Shown &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultFoldData\&quot; value=\&quot;hide\&quot;&gt; Hidden &lt;/$radio&gt;\n&lt;/$tiddler&gt;\n\n''Select which Tab you want to be open by Default'' &lt;br /&gt;\n&lt;$tiddler tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot;&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/backlinks\&quot;&gt; Backlinks &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/freelinks\&quot;&gt; Freelinks &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/keywords\&quot;&gt; Keywords &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/tagging\&quot;&gt; Tagged &lt;/$radio&gt;\n&lt;/$tiddler&gt;&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;7&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/config&quot;,
+            &quot;modified&quot;: &quot;20200503110546531&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/readme&quot;: {
+            &quot;created&quot;: &quot;20200503110056664&quot;,
+            &quot;text&quot;: &quot;For feedback / suggestions / help please visit plugin page on [[Google Groups|https://groups.google.com/forum/#!topic/tiddlywiki/9ra0s9AEKl4]] or [[Github|https://github.com/akhater/TWCrossLinks]]&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/readme&quot;,
+            &quot;modified&quot;: &quot;20200503110556549&quot;
         }
     }
 }</pre>
 </div>
-<div created="20200429195808011" modified="20200502094715896" tags="" title="$:/ak/plugins/TWCrossLinks/config/default" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>$:/ak/plugins/TWCrossLinks/core/backlinks</pre>
-</div>
-<div created="20200429182054776" modified="20200502094801424" tags="" title="$:/ak/plugins/TWCrossLinks/ui/tabs" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/tags/TWCrossLinks]!has[draft.of]]&quot; default={{$:/ak/plugins/TWCrossLinks/config/default}}/&gt;</pre>
+<div created="20200429195808011" modified="20200503115217849" tags="" title="$:/ak/plugins/TWCrossLinks/config/default" type="application/json" revision="0" bag="default">
+<pre>{
+    &quot;DefaultFoldData&quot;: &quot;hide&quot;,
+    &quot;DefaultTab&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/backlinks&quot;
+}</pre>
 </div>
 <div created="20200427215400270" modified="20200501234433638" tags="$:/tags/Stylesheet" title="$:/ak/ui/transclude.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>.tc-sidebar-lists button.tc-btn-mini { 
@@ -10925,14 +10935,8 @@ html body.tc-body {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200502165038320" modified="20200502165039807" title="$:/state/tab--542796719" revision="3" bag="default">
-<pre>$:/ak/plugins/TWCrossLinks/core/tagging</pre>
-</div>
-<div created="20200502165004194" modified="20200502165007085" title="$:/state/tab/moresidebar-1850697562" revision="3" bag="default">
-<pre>$:/core/ui/MoreSideBar/Orphans</pre>
-</div>
-<div created="20200502164946405" modified="20200502165102345" title="$:/state/tab/sidebar--595412856" revision="9" bag="default">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20200503115812014" modified="20200503115812014" title="$:/state/sidebar" revision="1" bag="default">
+<pre>no</pre>
 </div>
 <div title="$:/status/IsAnonymous" revision="1" bag="default">
 <pre>yes</pre>
@@ -10949,7 +10953,7 @@ html body.tc-body {
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div created="20200502165035136" list="" modified="20200502165035136" title="$:/StoryList" revision="12" bag="default">
+<div list="" title="$:/StoryList" revision="2" bag="default">
 <pre></pre>
 </div>
 <div created="20200502112123171" list="$:/core/ui/SideBarSegments/site-title $:/core/ui/SideBarSegments/site-subtitle $:/core/ui/SideBarSegments/page-controls $:/core/ui/SideBarSegments/search $:/core/ui/SideBarSegments/tabs" modified="20200502112123186" title="$:/tags/SideBarSegment" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12113,7 +12117,7 @@ div::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); }
 <div created="20200429112839464" modified="20200429112848984" title="$:/themes/tiddlywiki/vanilla/options/stickytitles" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div created="20200429143346003" modified="20200502113616956" title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20200429143346003" modified="20200503115431468" title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>zoomin</pre>
 </div>
 
