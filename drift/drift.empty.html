@@ -231,6 +231,12 @@ Error message and password prompt
 
 <li>$:/.tb/ui/AdvancedSearch/Field</li>
 
+<li>$:/ak/drift/stylesheet</li>
+
+<li>$:/ak/drift/TweaksDB</li>
+
+<li>$:/ak/drift/TweaksPanel</li>
+
 <li>$:/ak/plugins/TWCrossLinks</li>
 
 <li>$:/ak/plugins/TWCrossLinks/config/default</li>
@@ -316,6 +322,10 @@ Error message and password prompt
 <li>$:/SplashScreen</li>
 
 <li>$:/state/sidebar</li>
+
+<li>$:/state/tab--1963855381</li>
+
+<li>$:/state/tab-1749438307</li>
 
 <li>$:/status/IsAnonymous</li>
 
@@ -454,6 +464,22 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
 &lt;/dl&gt;
 &lt;/$reveal&gt;
 &lt;/$reveal&gt;</pre>
+</div>
+<div created="20200504140221596" modified="20200504142746604" tags="$:/tags/Stylesheet" title="$:/ak/drift/stylesheet" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;$list filter=&quot;[[$:/ak/drift/TweaksDB]getindex[showulil]] -[[false]]&quot; variable=showulil&gt;
+ul, li {
+    list-style-position: inside;
+}
+&lt;/$list&gt;</pre>
+</div>
+<div created="20200504142801555" modified="20200504143452846" title="$:/ak/drift/TweaksDB" type="application/json" revision="0" bag="default">
+<pre>{
+    &quot;showulil&quot;: &quot;false&quot;
+}</pre>
+</div>
+<div caption="Drift Tweaks" created="20200504132533468" modified="20200504142746561" tags="$:/tags/ControlPanel/Appearance" title="$:/ak/drift/TweaksPanel" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;$checkbox tiddler=&quot;$:/ak/drift/TweaksDB&quot; index=&quot;showulil&quot; checked=&quot;true&quot; unchecked=&quot;false&quot; default=&quot;false&quot;&gt; Show Bullets &amp; Numbers&lt;/$checkbox&gt;
+</pre>
 </div>
 <div created="20200502092707287" description="Discover all your intra tiddlers links" list="config readme change.log" modified="20200503115100480" name="TWCrossLinks" plugin-type="plugin" tags="" title="$:/ak/plugins/TWCrossLinks" type="application/json" version="0.0.7" revision="0" bag="default">
 <pre>{
@@ -10432,7 +10458,7 @@ toolbar-done-button:
 untagged-background: &lt;&lt;colour very-muted-foreground&gt;&gt;
 very-muted-foreground: rgba(255, 255, 255, 0.12)</pre>
 </div>
-<div created="20190202142805411" creator="jd" modified="20200504102921807" modifier="jd" title="$:/palette" type="text/vnd.tiddlywiki" revision="2" bag="default">
+<div created="20190202142805411" creator="jd" modified="20200504143934699" modifier="jd" title="$:/palette" type="text/vnd.tiddlywiki" revision="4" bag="default">
 <pre>$:/palettes/Twilight</pre>
 </div>
 <div caption="{{$:/core/images/advanced-search-button}} search" created="20171122115403541" creator="JD" description="Toggle searchbar visibility" modified="20200430205248593" modifier="JD" tags="$:/tags/jd/mobbutton" title="$:/plugins/jd/mob/button/search" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10711,8 +10737,14 @@ html body.tc-body {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200504102918975" modified="20200504102918975" title="$:/state/sidebar" revision="1" bag="default">
+<div created="20200504143936651" modified="20200504143936651" title="$:/state/sidebar" revision="1" bag="default">
 <pre>no</pre>
+</div>
+<div created="20200504143922955" modified="20200504143926699" title="$:/state/tab--1963855381" revision="3" bag="default">
+<pre>$:/core/ui/ControlPanel/Palette</pre>
+</div>
+<div created="20200504143920849" modified="20200504143920849" title="$:/state/tab-1749438307" revision="1" bag="default">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div title="$:/status/IsAnonymous" revision="1" bag="default">
 <pre>yes</pre>
@@ -10729,7 +10761,7 @@ html body.tc-body {
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div list="" title="$:/StoryList" revision="2" bag="default">
+<div created="20200504143918053" list="" modified="20200504143918053" title="$:/StoryList" revision="4" bag="default">
 <pre></pre>
 </div>
 <div created="20200502112123171" list="$:/core/ui/SideBarSegments/site-title $:/core/ui/SideBarSegments/site-subtitle $:/core/ui/SideBarSegments/page-controls $:/core/ui/SideBarSegments/search $:/core/ui/SideBarSegments/tabs" modified="20200502112123186" title="$:/tags/SideBarSegment" type="text/vnd.tiddlywiki" revision="0" bag="default">
