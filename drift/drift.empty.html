@@ -237,11 +237,9 @@ Error message and password prompt
 
 <li>$:/ak/drift/TweaksPanel</li>
 
+<li>$:/ak/drift/ui/transclude.css</li>
+
 <li>$:/ak/plugins/TWCrossLinks</li>
-
-<li>$:/ak/plugins/TWCrossLinks/config/default</li>
-
-<li>$:/ak/ui/transclude.css</li>
 
 <li>$:/config/EditorTypeMappings/text/vnd.tiddlywiki</li>
 
@@ -323,9 +321,9 @@ Error message and password prompt
 
 <li>$:/state/sidebar</li>
 
-<li>$:/state/tab--1963855381</li>
+<li>$:/state/tab/moresidebar-1850697562</li>
 
-<li>$:/state/tab-1749438307</li>
+<li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/status/IsAnonymous</li>
 
@@ -465,55 +463,171 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
 &lt;/$reveal&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20200504140221596" modified="20200504142746604" tags="$:/tags/Stylesheet" title="$:/ak/drift/stylesheet" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20200504140221596" modified="20200505071937521" tags="$:/tags/Stylesheet" title="$:/ak/drift/stylesheet" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$list filter=&quot;[[$:/ak/drift/TweaksDB]getindex[showulil]] -[[false]]&quot; variable=showulil&gt;
 ul, li {
     list-style-position: inside;
 }
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/ak/drift/TweaksDB]getindex[wrapulil]] -[[false]]&quot; variable=wrapulil&gt;
+ul, li {
+   white-space: normal;
+}
 &lt;/$list&gt;</pre>
 </div>
-<div created="20200504142801555" modified="20200504143452846" title="$:/ak/drift/TweaksDB" type="application/json" revision="0" bag="default">
+<div created="20200504142801555" modified="20200505090051431" title="$:/ak/drift/TweaksDB" type="application/json" revision="0" bag="default">
 <pre>{
-    &quot;showulil&quot;: &quot;false&quot;
+    &quot;showulil&quot;: &quot;false&quot;,
+    &quot;wrapulil&quot;: &quot;true&quot;
 }</pre>
 </div>
-<div caption="Drift Tweaks" created="20200504132533468" modified="20200504142746561" tags="$:/tags/ControlPanel/Appearance" title="$:/ak/drift/TweaksPanel" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div caption="Drift Tweaks" created="20200504132533468" modified="20200505072113709" tags="$:/tags/ControlPanel/Appearance" title="$:/ak/drift/TweaksPanel" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$checkbox tiddler=&quot;$:/ak/drift/TweaksDB&quot; index=&quot;showulil&quot; checked=&quot;true&quot; unchecked=&quot;false&quot; default=&quot;false&quot;&gt; Show Bullets &amp; Numbers&lt;/$checkbox&gt;
+
+&lt;$checkbox tiddler=&quot;$:/ak/drift/TweaksDB&quot; index=&quot;wrapulil&quot; checked=&quot;true&quot; unchecked=&quot;false&quot; default=&quot;false&quot;&gt; Check this box if you use long bullet or numbered lists &lt;/$checkbox&gt;</pre>
+</div>
+<div created="20200427215400270" modified="20200505094034859" tags="$:/tags/Stylesheet" title="$:/ak/drift/ui/transclude.css" type="text/css" revision="0" bag="default">
+<pre>.tc-sidebar-lists button.tc-btn-mini { 
+   color: rgb(179,179,179);
+}
+
+
+
+.trans-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.trans-container .trans-content {
+  visibility: hidden;
+  overflow: hidden;
+  margin-top: -2em;
+  padding: 5px;
+  display: block;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 80;
+  
+  /*  
+  top: 20px;
+  left: 20px;  */
+
+  float: right;  
+  opacity: 0;
+  transition: opacity 0.3s; 
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  overflow: hidden;
+  margin-top: -2em;
+  padding: 5px;
+  display: block;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 80;
+  
+  /*  
+  top: 20px;
+  left: 20px;  */
+
+  float: right;  
+  opacity: 0;
+  transition: opacity 0.3s; 
+}
+
+.trans-container .trans-content::after {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 1px;
+}
+
+.trans-content {
+   width: 90vw;
+   max-width: 32em;
+}
+
+.tooltip .tooltiptext::after {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 1px;
+}
+
+
+.trans-container:hover &gt; .trans-content {
+  margin-top:-5px;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.25s all ease;
+  transition-delay: 0.75s;
+}
+
+.tooltip:hover &gt; .tooltiptext {
+  margin-top:-5px;
+  visibility: visible;
+  opacity: 1;
+  width: 100vw;
+  max-width: 32em;
+  height: 100vw;
+  max-height: 32em;
+  transition: 0.25s all ease;
+  transition-delay: 0.75s;
+}
+
+.resp-iframe {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px;
+}
 </pre>
 </div>
-<div created="20200502092707287" description="Discover all your intra tiddlers links" list="config readme change.log" modified="20200503115100480" name="TWCrossLinks" plugin-type="plugin" tags="" title="$:/ak/plugins/TWCrossLinks" type="application/json" version="0.0.7" revision="0" bag="default">
+<div created="20200502092707287" description="Discover all your intra tiddlers links" list="config readme change.log" modified="20200505074457816" name="TWCrossLinks" plugin-type="plugin" tags="" title="$:/ak/plugins/TWCrossLinks" type="application/json" version="0.1.0" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/ak/plugins/TWCrossLinks/config/default&quot;: {
-            &quot;created&quot;: &quot;20200429195808011&quot;,
-            &quot;text&quot;: &quot;{\n    \&quot;DefaultFoldData\&quot;: \&quot;hide\&quot;,\n    \&quot;DefaultTab\&quot;: \&quot;$:/ak/plugins/TWCrossLinks/core/backlinks\&quot;\n}&quot;,
+            &quot;text&quot;: &quot;{\n    \&quot;DefaultFoldData\&quot;: \&quot;hide\&quot;,\n    \&quot;DefaultTab\&quot;: \&quot;$:/ak/plugins/TWCrossLinks/core/backlinks\&quot;,\n    \&quot;TranscludeInboundLinks\&quot;: \&quot;true\&quot;\n}&quot;,
             &quot;bag&quot;: &quot;default&quot;,
-            &quot;revision&quot;: &quot;0&quot;,
+            &quot;revision&quot;: &quot;138&quot;,
             &quot;type&quot;: &quot;application/json&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/config/default&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200503114953862&quot;
+            &quot;modified&quot;: &quot;20200505065649643&quot;,
+            &quot;created&quot;: &quot;20200429195808011&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/core/backlinks&quot;: {
             &quot;created&quot;: &quot;20200429182330136&quot;,
-            &quot;text&quot;: &quot;\\define lingo-base() $:/language/TiddlerInfo/\n&lt;$list filter=\&quot;[!is[system]all[current]backlinks[]!tag[hide]sort[title]] -[is[current]]\&quot; emptyMessage=&lt;&lt;lingo References/Empty&gt;&gt; template=\&quot;$:/core/ui/ListItemTemplate\&quot;&gt;\n&lt;/$list&gt;&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/TiddlerInfo/\n&lt;$list filter=\&quot;[!is[system]all[current]backlinks[]!tag[hide]sort[title]] -[is[current]]\&quot; emptyMessage=&lt;&lt;lingo References/Empty&gt;&gt; variable=result&gt;\n    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[TranscludeInboundLinks]] -[[true]]\&quot; variable=conf&gt;\n        &lt;div class=\&quot;tc-menu-list-item\&quot;&gt; &lt;$link to=&lt;&lt;result&gt;&gt; &gt;&lt;$view tiddler=&lt;&lt;result&gt;&gt; field=title&gt; &lt;/$view&gt;&lt;/$link&gt; &lt;/div&gt;  \n    &lt;/$list&gt;\n    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[TranscludeInboundLinks]] -[[false]]\&quot; variable=conf&gt;\n        &lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n            &lt;div class=\&quot;trans-container\&quot;&gt; \n                &lt;$link to=&lt;&lt;result&gt;&gt; &gt;&lt;$view tiddler=&lt;&lt;result&gt;&gt; field=title template=\&quot;$:/core/ui/ListItemTemplate\&quot;&gt; &lt;/$view&gt;&lt;/$link&gt;\n&lt;span class=\&quot;trans-content\&quot;&gt;  &lt;$context term=&lt;&lt;currentTiddler&gt;&gt; tiddler= &lt;&lt;result&gt;&gt; /&gt;  &lt;/span&gt; \n            &lt;/div&gt;\n        &lt;/div&gt;\n    &lt;/$list&gt;\n&lt;/$list&gt;&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;0&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/backlinks&quot;,
             &quot;tags&quot;: &quot;$:/tags/TWCrossLinks&quot;,
-            &quot;modified&quot;: &quot;20200502090416389&quot;,
+            &quot;modified&quot;: &quot;20200504205713469&quot;,
             &quot;caption&quot;: &quot;Backlinks&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/core/freelinks&quot;: {
             &quot;created&quot;: &quot;20200430051330741&quot;,
-            &quot;text&quot;: &quot;\\define searchInField(field, for, ci)\n&lt;$list filter=\&quot;[!is[shadow]!is[system]regexp:$field$[$for$$ci$]] -[all[current]backlinks[]]\&quot; emptyMessage=\&quot;No freelinks to this tiddler\&quot; \n template=\&quot;$:/core/ui/ListItemTemplate\&quot;&gt;\n&lt;$link&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;\n&lt;/$list&gt;\n\\end\n\n&lt;$macrocall $name=\&quot;searchInField\&quot; field=\&quot;text\&quot; for={{!!title}} ci=\&quot;(?i)\&quot;/&gt;\n&quot;,
+            &quot;text&quot;: &quot;\\define searchInField(field, for, ci)\n&lt;$list filter=\&quot;[!is[shadow]!is[system]regexp:$field$[$for$$ci$]] -[all[current]backlinks[]]\&quot; emptyMessage=\&quot;No freelinks to this tiddler\&quot; \n variable=result&gt;\n    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[TranscludeInboundLinks]] -[[true]]\&quot; variable=var1&gt;\n        &lt;div class=\&quot;tc-menu-list-item\&quot;&gt; &lt;$link to=&lt;&lt;result&gt;&gt; &gt;&lt;$view tiddler=&lt;&lt;result&gt;&gt; field=title&gt; &lt;/$view&gt;&lt;/$link&gt; &lt;/div&gt; \n    &lt;/$list&gt;\n    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[TranscludeInboundLinks]] -[[false]]\&quot; variable=var1&gt;\n        &lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n            &lt;div class=\&quot;trans-container\&quot;&gt;\n                &lt;$link to=&lt;&lt;result&gt;&gt; &gt;&lt;$view tiddler=&lt;&lt;result&gt;&gt; field=title&gt; &lt;/$view&gt;&lt;/$link&gt;\n                &lt;span class=\&quot;trans-content\&quot;&gt;  &lt;$context term=&lt;&lt;currentTiddler&gt;&gt; tiddler=&lt;&lt;result&gt;&gt; /&gt; &lt;/span&gt;\n            &lt;/div&gt;\n        &lt;/div&gt;\n    &lt;/$list&gt;\n&lt;/$list&gt;\n\\end\n\n\n&lt;$macrocall $name=\&quot;searchInField\&quot; field=\&quot;text\&quot; for={{!!title}} ci=\&quot;(?i)\&quot;/&gt;\n&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;0&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/freelinks&quot;,
             &quot;tags&quot;: &quot;$:/tags/TWCrossLinks&quot;,
-            &quot;modified&quot;: &quot;20200502090439897&quot;,
+            &quot;modified&quot;: &quot;20200504211412099&quot;,
             &quot;caption&quot;: &quot;Freelinks&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/core/keywords&quot;: {
@@ -589,20 +703,23 @@ ul, li {
             &quot;modified&quot;: &quot;20200503114538223&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/change.log&quot;: {
-            &quot;created&quot;: &quot;20200502091404523&quot;,
-            &quot;text&quot;: &quot;''2020-05-03'': v0.0.7\n\n* Added configuration panel, can be found at $:/ak/plugins/TWCrossLinks\n** You can now set the Default state of the \&quot;inbound links\&quot; {Shown / Hidden}\n** You can now set the Default \&quot;inbound links\&quot; tab\n\n''2020-05-02'': v0.0.3\n\n* Initial packaging and release&quot;,
-            &quot;tags&quot;: &quot;&quot;,
+            &quot;text&quot;: &quot;''2020-05-05'': v0.1.0\n\n* Inbound links for \&quot;//Backlinks//\&quot; and \&quot;//Freelinks//\&quot; can now be transcluded in a pop-up, try it by enabling this feature from the [[TWCrosslinks|$:/ak/plugins/TWCrossLinks]] config panel\n\n\n''2020-05-03'': v0.0.7\n\n* Added configuration panel, can be found at $:/ak/plugins/TWCrossLinks\n** You can now set the Default state of the \&quot;inbound links\&quot; {Shown / Hidden}\n** You can now set the Default \&quot;inbound links\&quot; tab\n\n''2020-05-02'': v0.0.3\n\n* Initial packaging and release&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;6&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/change.log&quot;,
-            &quot;modified&quot;: &quot;20200503114700750&quot;
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;modified&quot;: &quot;20200505073749084&quot;,
+            &quot;created&quot;: &quot;20200502091404523&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/config&quot;: {
             &quot;created&quot;: &quot;20200503100751953&quot;,
-            &quot;text&quot;: &quot;''By default the //inbound links// should be:'' &lt;br /&gt;\n&lt;$tiddler tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot;&gt;\n&lt;$radio index=\&quot;DefaultFoldData\&quot; value=\&quot;show\&quot;&gt; Shown &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultFoldData\&quot; value=\&quot;hide\&quot;&gt; Hidden &lt;/$radio&gt;\n&lt;/$tiddler&gt;\n\n''Select which Tab you want to be open by Default'' &lt;br /&gt;\n&lt;$tiddler tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot;&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/backlinks\&quot;&gt; Backlinks &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/freelinks\&quot;&gt; Freelinks &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/keywords\&quot;&gt; Keywords &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/tagging\&quot;&gt; Tagged &lt;/$radio&gt;\n&lt;/$tiddler&gt;&quot;,
+            &quot;text&quot;: &quot;''By default the //inbound links// should be:'' &lt;br /&gt;\n&lt;$tiddler tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot;&gt;\n&lt;$radio index=\&quot;DefaultFoldData\&quot; value=\&quot;show\&quot;&gt; Shown &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultFoldData\&quot; value=\&quot;hide\&quot;&gt; Hidden &lt;/$radio&gt;\n&lt;/$tiddler&gt;\n\n''Select which Tab you want to be open by Default'' &lt;br /&gt;\n&lt;$tiddler tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot;&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/backlinks\&quot;&gt; Backlinks &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/freelinks\&quot;&gt; Freelinks &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/keywords\&quot;&gt; Keywords &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/tagging\&quot;&gt; Tagged &lt;/$radio&gt;\n&lt;/$tiddler&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot; index=\&quot;TranscludeInboundLinks\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; ''Transclude //Backlinks// &amp; //Freelinks// on hover''&lt;/$checkbox&gt;\n&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;7&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/config&quot;,
-            &quot;modified&quot;: &quot;20200503110546531&quot;
+            &quot;modified&quot;: &quot;20200504203958150&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/readme&quot;: {
             &quot;created&quot;: &quot;20200503110056664&quot;,
@@ -610,73 +727,31 @@ ul, li {
             &quot;tags&quot;: &quot;&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/readme&quot;,
             &quot;modified&quot;: &quot;20200503110556549&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/daniello/context.js&quot;: {
+            &quot;created&quot;: &quot;20140418153435777&quot;,
+            &quot;text&quot;: &quot;/*\\\\\ntitle: $:/core/modules/widgets/danielo/context-widget.js\ntype: application/javascript\nmodule-type: widget\n\nEdit-text widget\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar Widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget;\nvar contextWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\ncontextWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\ncontextWidget.prototype.render = function(parent,nextSibling) {\n   // Save the parent dom node\n\tthis.parentDomNode = parent;\n\t// Compute our attributes\n\tthis.computeAttributes();\n\t// Execute our logic\n\tthis.execute();\n    \n  if(this.term &amp;&amp; this.term.length&gt;3){\n     \n      this.createRegexp();\n      var matches = this.executeRegexp();\n\t  if(matches.length &gt; 0){ \n        this.domNode = this.document.createElement(this.element);\n        this.domNode.className=\&quot;tw-context\&quot;;\n        this.composeResults( matches ); //this appends to domNode        \n      \t// Insert element\n      \tparent.insertBefore(this.domNode,nextSibling);\n      \tthis.renderChildren(this.domNode,null);\n\t  \tthis.domNodes.push(this.domNode);\n      }\n  }\n\t\n};\n\n/*\nCompute the internal state of the widget\n*/\ncontextWidget.prototype.execute = function() {\n\t// Get the parameters from the attributes\n    this.matchedClass = this.getAttribute(\&quot;matchClass\&quot;,\&quot;matched\&quot;);\n\tthis.tiddler = this.getAttribute( \&quot;tiddler\&quot;,this.getVariable(\&quot;currentTiddler\&quot;) );\n    this.term =  this.getAttribute(\&quot;term\&quot;,this.getAttribute(\&quot;searchTerm\&quot;));\n\tthis.contextLength = this.getAttribute(\&quot;length\&quot;,50);\n    this.before = this.getAttribute(\&quot;before\&quot;,this.contextLength);\n    this.after = this.getAttribute(\&quot;after\&quot;,this.contextLength);\n    this.maxMatches = this.getAttribute(\&quot;maxMatches\&quot;,10);\n    this.element = this.getAttribute(\&quot;element\&quot;,\&quot;pre\&quot;);\n\tthis.makeChildWidgets();\n};\n\n  /*Create the regular expression*/\ncontextWidget.prototype.createRegexp = function()\n{\n  var regString = \&quot;(\\\\w+[\\\\s\\\\S]{0,#before#})?(#term#)([\\\\s\\\\S]{0,#after#}\\\\w+)?\&quot;;\n\n  var regString = regString.replace(\&quot;#before#\&quot;,this.before).replace(\&quot;#term#\&quot;, $tw.utils.escapeRegExp(this.term) ) .replace(\&quot;#after#\&quot;,this.after);\n  this.regexp = new RegExp(regString,\&quot;ig\&quot;);\n  //console.log(regString);\n};\n/*\nexecute the regular expresion\n*/\ncontextWidget.prototype.executeRegexp = function()\n{\n  var text = this.wiki.getTiddlerText(this.tiddler), match,results = new Array();\n  while( (match = this.regexp.exec( text ) ) &amp;&amp; (results.length &lt; this.maxMatches) )\n      { results.push(match) }\n  //console.log(\&quot;matches\&quot;,results);\n  return results;\n};\n\n/*\ncompose the results\nmatches : array of match objects from regular expression execute\n*/\ncontextWidget.prototype.composeResults = function(matches){\n var result=[], self=this, node = this.domNode,\n dots = textNode(\&quot;...\\n\&quot;),\n span = matchedNode( this.term );\n\n  for(var i=0; i &lt; matches.length; i++){\n   processMatch( matches[i] );\n }\n  \n  function processMatch(match){\n    if( match.index !== 0) node.appendChild( dots.cloneNode(true) );\n    for( var i=1;i&lt;match.length;i++ ) {//match[0] full matched text (all groups together)\n      if( match[i] ) {\n        if ( match[i].toLowerCase() == self.term.toLowerCase() ) \n          node.appendChild( match[i] == self.term ? span.cloneNode(true) : matchedNode( match[i] ) )\n          else\n            node.appendChild( textNode( match[i]) )\n      }\n    }\n    if( match.index + match[0].length &lt; match.input.length) node.appendChild( dots.cloneNode(true) );\n  }\n  \n  function textNode(text){ return self.document.createTextNode(text) }\n  function matchedNode(text) { \n    var node = self.document.createElement(\&quot;span\&quot;); node.appendChild( textNode(text) );  node.className = self.matchedClass;\n    return node }\n  \n};\n/*\nSelectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering\n*/\ncontextWidget.prototype.refresh = function(changedTiddlers) {\n\tvar changedAttributes = this.computeAttributes();\n\tif(changedAttributes.tiddler || changedAttributes.term || changedAttributes.length || changedAttributes.matchedClass) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t}\n    return this.refreshChildren(changedTiddlers);\n};\n\nexports.context = contextWidget;\n\n})();&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;1&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/daniello/context.js&quot;,
+            &quot;module-type&quot;: &quot;widget&quot;,
+            &quot;modifier&quot;: &quot;danielo&quot;,
+            &quot;modified&quot;: &quot;20200504180206365&quot;,
+            &quot;creator&quot;: &quot;danielo&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/ui/context.css&quot;: {
+            &quot;created&quot;: &quot;20140529162823729&quot;,
+            &quot;text&quot;: &quot;.matched {background-color:#faed27; color:black;}\n\n\n.tw-context {\n    display: block;\n    padding: 10px 20px;\n    margin-top: 1em;\n    margin-bottom: 1em;\n    word-break: normal;\n    word-wrap: break-word;\n    white-space: pre;\n    white-space: pre-wrap;\n    background-color: #eee;\n    border: 1px solid #cccccc;\n    border-radius: 3px;\n}\n\n.tc-menu-list-item .trans-container {\n   padding-left: 5px;\n}&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;1&quot;,
+            &quot;type&quot;: &quot;text/css&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/context.css&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;modified&quot;: &quot;20200505061619315&quot;
         }
     }
 }</pre>
-</div>
-<div created="20200429195808011" modified="20200503115217849" tags="" title="$:/ak/plugins/TWCrossLinks/config/default" type="application/json" revision="0" bag="default">
-<pre>{
-    &quot;DefaultFoldData&quot;: &quot;hide&quot;,
-    &quot;DefaultTab&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/backlinks&quot;
-}</pre>
-</div>
-<div created="20200427215400270" modified="20200501234433638" tags="$:/tags/Stylesheet" title="$:/ak/ui/transclude.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>.tc-sidebar-lists button.tc-btn-mini { 
-   color: rgb(179,179,179);
-}
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  overflow: hidden;
-  margin-top: -2em;
-  padding: 5px;
-  display: block;
-  
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 80;
-  
-  /*  
-  top: 20px;
-  left: 20px;  */
-
-  float: right;  
-  opacity: 0;
-  
-   /* transition: opacity 0.3s; */
-}
-
-.tooltip .tooltiptext::after {
-  position: relative;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  border: 1px;
-}
-
-.tooltip:hover &gt; .tooltiptext {
-   margin-top:-5px;
-  visibility: visible;
-  opacity: 1;
-  width: 100vw;
-  max-width: 32em;
-  height: 100vw;
-  max-height: 32em;
-}
-
-.resp-iframe {
-    position: rel;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 1px;
-}
-</pre>
 </div>
 <div created="20200430042143481" modified="20200430042150375" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>comptext</pre>
@@ -720,7 +795,7 @@ ul, li {
 <div created="20200429120310882" modified="20200430205150640" title="$:/config/Plugins/Disabled/$:/plugins/jd/mob" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div created="20200428155156560" modified="20200428155156608" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20200428155156560" modified="20200504180159838" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>yes</pre>
 </div>
 <div created="20190201102601467" creator="jd" modified="20200502111832827" modifier="jd" title="$:/config/SideBarSegments/Visibility/$:/core/ui/SideBarSegments/page-controls" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10458,7 +10533,7 @@ toolbar-done-button:
 untagged-background: &lt;&lt;colour very-muted-foreground&gt;&gt;
 very-muted-foreground: rgba(255, 255, 255, 0.12)</pre>
 </div>
-<div created="20190202142805411" creator="jd" modified="20200504143934699" modifier="jd" title="$:/palette" type="text/vnd.tiddlywiki" revision="4" bag="default">
+<div created="20190202142805411" creator="jd" modified="20200505095621397" modifier="jd" title="$:/palette" type="text/vnd.tiddlywiki" revision="2" bag="default">
 <pre>$:/palettes/Twilight</pre>
 </div>
 <div caption="{{$:/core/images/advanced-search-button}} search" created="20171122115403541" creator="JD" description="Toggle searchbar visibility" modified="20200430205248593" modifier="JD" tags="$:/tags/jd/mobbutton" title="$:/plugins/jd/mob/button/search" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10737,14 +10812,14 @@ html body.tc-body {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200504143936651" modified="20200504143936651" title="$:/state/sidebar" revision="1" bag="default">
-<pre>no</pre>
+<div created="20200505095603870" modified="20200505095609236" title="$:/state/sidebar" revision="2" bag="default">
+<pre>yes</pre>
 </div>
-<div created="20200504143922955" modified="20200504143926699" title="$:/state/tab--1963855381" revision="3" bag="default">
-<pre>$:/core/ui/ControlPanel/Palette</pre>
+<div created="20200505095613555" modified="20200505095617631" title="$:/state/tab/moresidebar-1850697562" revision="4" bag="default">
+<pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20200504143920849" modified="20200504143920849" title="$:/state/tab-1749438307" revision="1" bag="default">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20200505095610661" modified="20200505095618913" title="$:/state/tab/sidebar--595412856" revision="2" bag="default">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/IsAnonymous" revision="1" bag="default">
 <pre>yes</pre>
@@ -10761,7 +10836,7 @@ html body.tc-body {
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div created="20200504143918053" list="" modified="20200504143918053" title="$:/StoryList" revision="4" bag="default">
+<div list="" title="$:/StoryList" revision="2" bag="default">
 <pre></pre>
 </div>
 <div created="20200502112123171" list="$:/core/ui/SideBarSegments/site-title $:/core/ui/SideBarSegments/site-subtitle $:/core/ui/SideBarSegments/page-controls $:/core/ui/SideBarSegments/search $:/core/ui/SideBarSegments/tabs" modified="20200502112123186" title="$:/tags/SideBarSegment" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11925,7 +12000,7 @@ div::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); }
 <div created="20200429112839464" modified="20200429112848984" title="$:/themes/tiddlywiki/vanilla/options/stickytitles" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div created="20200429143346003" modified="20200503115431468" title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20200429143346003" modified="20200505085708599" title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>zoomin</pre>
 </div>
 
