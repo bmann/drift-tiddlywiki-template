@@ -241,6 +241,8 @@ Error message and password prompt
 
 <li>$:/ak/plugins/TWCrossLinks</li>
 
+<li>$:/ak/plugins/TWCrossLinks/config/default</li>
+
 <li>$:/config/EditorTypeMappings/text/vnd.tiddlywiki</li>
 
 <li>$:/config/EmptyStoryMessage</li>
@@ -321,21 +323,9 @@ Error message and password prompt
 
 <li>$:/state/DriftHomeTabs-651803151</li>
 
-<li>$:/state/searchtab-1444756290</li>
+<li>$:/state/plugin-info--1700987158-$:/ak/plugins/TWCrossLinks--2091084576</li>
 
 <li>$:/state/sidebar</li>
-
-<li>$:/state/tab--1963855381</li>
-
-<li>$:/state/tab--2134523464</li>
-
-<li>$:/state/tab-1163638994</li>
-
-<li>$:/state/tab-1749438307</li>
-
-<li>$:/state/tab-243303903</li>
-
-<li>$:/state/tab/moresidebar-1850697562</li>
 
 <li>$:/state/tab/sidebar--595412856</li>
 
@@ -541,7 +531,7 @@ ul, li {
 }
 &lt;/$list&gt;</pre>
 </div>
-<div created="20200504142801555" modified="20200505090051416" title="$:/ak/drift/TweaksDB" type="application/json" revision="8" bag="default">
+<div created="20200504142801555" modified="20200505113954172" title="$:/ak/drift/TweaksDB" type="application/json" revision="2" bag="default">
 <pre>{
     &quot;showulil&quot;: &quot;false&quot;,
     &quot;wrapulil&quot;: &quot;true&quot;
@@ -552,41 +542,13 @@ ul, li {
 
 &lt;$checkbox tiddler=&quot;$:/ak/drift/TweaksDB&quot; index=&quot;wrapulil&quot; checked=&quot;true&quot; unchecked=&quot;false&quot; default=&quot;false&quot;&gt; Check this box if you use long bullet or numbered lists &lt;/$checkbox&gt;</pre>
 </div>
-<div created="20200427215400270" modified="20200505094034773" tags="$:/tags/Stylesheet" title="$:/ak/drift/ui/transclude.css" type="text/css" revision="1" bag="default">
+<div created="20200427215400270" modified="20200505112301926" tags="$:/tags/Stylesheet" title="$:/ak/drift/ui/transclude.css" type="text/css" revision="0" bag="default">
 <pre>.tc-sidebar-lists button.tc-btn-mini { 
    color: rgb(179,179,179);
 }
-
-
-
-.trans-container {
-  position: relative;
-  display: inline-block;
-}
-
 .tooltip {
   position: relative;
   display: inline-block;
-}
-
-.trans-container .trans-content {
-  visibility: hidden;
-  overflow: hidden;
-  margin-top: -2em;
-  padding: 5px;
-  display: block;
-  
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 80;
-  
-  /*  
-  top: 20px;
-  left: 20px;  */
-
-  float: right;  
-  opacity: 0;
-  transition: opacity 0.3s; 
 }
 
 .tooltip .tooltiptext {
@@ -606,20 +568,8 @@ ul, li {
 
   float: right;  
   opacity: 0;
-  transition: opacity 0.3s; 
-}
-
-.trans-container .trans-content::after {
-  position: relative;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  border: 1px;
-}
-
-.trans-content {
-   width: 90vw;
-   max-width: 32em;
+  
+   /* transition: opacity 0.3s; */
 }
 
 .tooltip .tooltiptext::after {
@@ -630,29 +580,18 @@ ul, li {
   border: 1px;
 }
 
-
-.trans-container:hover &gt; .trans-content {
-  margin-top:-5px;
-  visibility: visible;
-  opacity: 1;
-  transition: 0.25s all ease;
-  transition-delay: 0.75s;
-}
-
 .tooltip:hover &gt; .tooltiptext {
-  margin-top:-5px;
+   margin-top:-5px;
   visibility: visible;
   opacity: 1;
   width: 100vw;
   max-width: 32em;
   height: 100vw;
   max-height: 32em;
-  transition: 0.25s all ease;
-  transition-delay: 0.75s;
 }
 
 .resp-iframe {
-    position: relative;
+    position: rel;
     top: 0;
     left: 0;
     width: 100%;
@@ -661,7 +600,7 @@ ul, li {
 }
 </pre>
 </div>
-<div created="20200502092707287" description="Discover all your intra tiddlers links" list="config readme change.log" modified="20200505074457816" name="TWCrossLinks" plugin-type="plugin" tags="" title="$:/ak/plugins/TWCrossLinks" type="application/json" version="0.1.0" revision="0" bag="default">
+<div created="20200502092707287" description="Discover all your intra tiddlers links" list="config readme change.log" modified="20200505113009251" name="TWCrossLinks" plugin-type="plugin" tags="" title="$:/ak/plugins/TWCrossLinks" type="application/json" version="0.1.1" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/ak/plugins/TWCrossLinks/config/default&quot;: {
@@ -815,8 +754,23 @@ ul, li {
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/context.css&quot;,
             &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
             &quot;modified&quot;: &quot;20200505061619315&quot;
+        },
+        &quot;$:/ak/plugins/TWCrossLinks/ui/transclude.css&quot;: {
+            &quot;created&quot;: &quot;20200505112617003&quot;,
+            &quot;text&quot;: &quot;.trans-container {\n  position: relative;\n  display: inline-block;\n}\n\n.trans-container .trans-content {\n  visibility: hidden;\n  overflow: hidden;\n  margin-top: -2em;\n  padding: 5px;\n  display: block;\n  \n  /* Position the tooltip */\n  position: absolute;\n  z-index: 80;\n  \n  /*  \n  top: 20px;\n  left: 20px;  */\n\n  float: right;  \n  opacity: 0;\n  transition: opacity 0.3s; \n}\n\n.trans-container .trans-content::after {\n  position: relative;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  border: 1px;\n}\n\n.trans-content {\n   width: 90vw;\n   max-width: 32em;\n}\n\n\n.trans-container:hover &gt; .trans-content {\n  margin-top:-5px;\n  visibility: visible;\n  opacity: 1;\n  transition: 0.25s all ease;\n  transition-delay: 0.75s;\n}&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/transclude.css&quot;,
+            &quot;modified&quot;: &quot;20200505112651001&quot;,
+            &quot;type&quot;: &quot;text/css&quot;
         }
     }
+}</pre>
+</div>
+<div created="20200429195808011" modified="20200505113110480" tags="" title="$:/ak/plugins/TWCrossLinks/config/default" type="application/json" revision="2" bag="default">
+<pre>{
+    &quot;DefaultFoldData&quot;: &quot;hide&quot;,
+    &quot;DefaultTab&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/backlinks&quot;,
+    &quot;TranscludeInboundLinks&quot;: &quot;true&quot;
 }</pre>
 </div>
 <div created="20200430042143481" modified="20200430042150375" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10599,7 +10553,7 @@ toolbar-done-button:
 untagged-background: &lt;&lt;colour very-muted-foreground&gt;&gt;
 very-muted-foreground: rgba(255, 255, 255, 0.12)</pre>
 </div>
-<div created="20190202142805411" creator="jd" modified="20200505090141095" modifier="jd" title="$:/palette" type="text/vnd.tiddlywiki" revision="2" bag="default">
+<div created="20190202142805411" creator="jd" modified="20200505090141108" modifier="jd" title="$:/palette" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>$:/palettes/Twilight</pre>
 </div>
 <div caption="{{$:/core/images/advanced-search-button}} search" created="20171122115403541" creator="JD" description="Toggle searchbar visibility" modified="20200430205248593" modifier="JD" tags="$:/tags/jd/mobbutton" title="$:/plugins/jd/mob/button/search" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10878,34 +10832,16 @@ html body.tc-body {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200505090041214" modified="20200505094423676" title="$:/state/DriftHomeTabs-651803151" revision="13" bag="default">
+<div created="20200505113054736" modified="20200505114001377" title="$:/state/DriftHomeTabs-651803151" revision="6" bag="default">
 <pre>Drift</pre>
 </div>
-<div created="20200505085919001" modified="20200505094015504" title="$:/state/searchtab-1444756290" revision="22" bag="default">
-<pre>$:/core/ui/AdvancedSearch/System</pre>
+<div created="20200505113115193" modified="20200505113148658" title="$:/state/plugin-info--1700987158-$:/ak/plugins/TWCrossLinks--2091084576" revision="4" bag="default">
+<pre>config</pre>
 </div>
-<div created="20200505090111174" modified="20200505094223390" title="$:/state/sidebar" revision="7" bag="default">
+<div created="20200505114004232" modified="20200505114004232" title="$:/state/sidebar" revision="1" bag="default">
 <pre>no</pre>
 </div>
-<div created="20200505085901672" modified="20200505085901672" title="$:/state/tab--1963855381" revision="1" bag="default">
-<pre>$:/ak/drift/TweaksPanel</pre>
-</div>
-<div created="20200505092058906" modified="20200505092102560" title="$:/state/tab--2134523464" revision="2" bag="default">
-<pre>$:/ak/plugins/TWCrossLinks/core/backlinks</pre>
-</div>
-<div created="20200505090346694" modified="20200505091850820" title="$:/state/tab-1163638994" revision="3" bag="default">
-<pre>$:/core/ui/MoreSideBar/Plugins/Theme</pre>
-</div>
-<div created="20200505085848312" modified="20200505085848312" title="$:/state/tab-1749438307" revision="1" bag="default">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
-</div>
-<div created="20200505093342478" modified="20200505093346403" title="$:/state/tab-243303903" revision="4" bag="default">
-<pre>$:/ak/plugins/TWCrossLinks/core/backlinks</pre>
-</div>
-<div created="20200505090100121" modified="20200505091841688" title="$:/state/tab/moresidebar-1850697562" revision="9" bag="default">
-<pre>$:/core/ui/MoreSideBar/Plugins</pre>
-</div>
-<div created="20200505090035411" modified="20200505094221973" title="$:/state/tab/sidebar--595412856" revision="18" bag="default">
+<div created="20200505113029166" modified="20200505113910781" title="$:/state/tab/sidebar--595412856" revision="4" bag="default">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/IsAnonymous" revision="1" bag="default">
@@ -10923,7 +10859,7 @@ html body.tc-body {
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div created="20200505085928885" list="[[Welcome to Drift]]" modified="20200505093958124" title="$:/StoryList" revision="70" bag="default">
+<div created="20200505113032563" list="[[Welcome to Drift]]" modified="20200505113908814" title="$:/StoryList" revision="21" bag="default">
 <pre></pre>
 </div>
 <div created="20200502112123171" list="$:/core/ui/SideBarSegments/site-title $:/core/ui/SideBarSegments/site-subtitle $:/core/ui/SideBarSegments/page-controls $:/core/ui/SideBarSegments/search $:/core/ui/SideBarSegments/tabs" modified="20200502112123186" title="$:/tags/SideBarSegment" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12090,8 +12026,12 @@ div::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); }
 <div created="20200429143346003" modified="20200505085708599" title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>zoomin</pre>
 </div>
-<div created="20200502114035466" modified="20200505090023609" tags="" title="Changelog" type="text/vnd.tiddlywiki" revision="1" bag="default">
-<pre>''v0.0.9'' - 2020-05-05
+<div created="20200502114035466" modified="20200505113946814" tags="" title="Changelog" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<pre>''v0.0.10'' - 2020-05-05
+
+* Bug fix
+
+''v0.0.9'' - 2020-05-05
 
 * Updated [[TWCrosslinks|Plugin - TWCrosslinks]] to v.0.1.0
 * Added [[Lorem]] example
